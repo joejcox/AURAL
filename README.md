@@ -130,16 +130,16 @@ assets/
 constants/
   index.js
 core/
-  core-component/
+  CoreComponent/
     index.js
     index.test.js
 components/
   smart/
-    samrt-component/
+    SmartComponent/
       index.js
       index.test.js
   dumb/
-    dumb-component/
+    DumbComponent/
       index.js
       index.test.js
 pages/

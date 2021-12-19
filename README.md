@@ -128,15 +128,20 @@ constants/
 core/
   core-component/
     index.js
-    tests.js
+    index.test.js
 components/
-  component-example/
-    index.js
-    tests.js
+  smart/
+    samrt-component/
+      index.js
+      index.test.js
+  dumb/
+    dumb-component/
+      index.js
+      index.test.js
 pages/
   page/
     index.js
-    tests.js
+    index.test.js
 hooks/
   useHook.js
 helpers/

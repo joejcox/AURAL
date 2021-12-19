@@ -20,7 +20,7 @@ During the build of this project I intend to develop a habit of outlining a proj
 
 #### Commiting
 
-Another aim is to focus on smaller commits, and providing shorter, but descriptive commit messages along with prefixes such as `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `style` and `test`
+Another aim is to focus on smaller commits, and providing shorter, but descriptive commit messages along with prefixes such as `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `style` and `test`.
 
 ## Tech used
 

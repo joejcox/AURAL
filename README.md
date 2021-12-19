@@ -10,7 +10,7 @@ As I now have 18 days of no work due to Christmas Holidays I thought I would spe
 
 A fully functional ecommerce application with user authentication, database (products, customers, orders), basket + checkout with Stripe payments (add to basket + buy now), private routes for customer account and orders list.
 
-## Learning Outcomes:
+## Expected Learning Outcomes:
 
 Using this project, I intend to learn how to use Redux and Testing libraries. I will also use the project to increase my knowledge with Firebase services.
 

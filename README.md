@@ -14,7 +14,7 @@ A fully functional ecommerce application with user authentication, database (pro
 
 Using this project, I intend to learn how to use Redux and Testing libraries. I will also use the project to increase my knowledge with Firebase services.
 
-I also hope to pick up more useful information on database structure. With my previous project [Block. Social Media](https://github.com/joejcox/Block) I came to a standstill due to structure. I didn't plan it and did not know what I wanted or needed before doing so. This ended up in messy files, logic and a need to rework the database structure which meant a lot of refactoring within most files of the app. For this reason I have left it as it is and moved on to building this e-commerce app.
+I also hope to pick up more useful information on database structure. With my previous project [Block. Social Media](https://github.com/joejcox/Block) I came to a some issues with structure - this time I would like to try out a new structure to gain a more rounded experience.
 
 During the build of this project I intend to develop a habit of outlining a project, its core tools, components and design before I even begin to code. I feel like this will provide a more enjoyable experience.
 

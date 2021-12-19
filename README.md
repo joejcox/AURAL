@@ -136,18 +136,18 @@ core/
     index.jsx
     index.test.jsx
 components/
-  smart/
-    SmartComponent/
-      index.jsx
-      index.test.jsx
-  dumb/
-    DumbComponent/
+  Component/
       index.jsx
       index.test.jsx
 pages/
-  page/
-    index.jsx
-    index.test.jsx
+  public/
+    Page/
+      index.jsx
+      index.test.jsx
+  private/
+    Page/
+      index.jsx
+      index.test.jsx
 redux/
   store.js
 hooks/

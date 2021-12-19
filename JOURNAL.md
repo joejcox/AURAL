@@ -29,7 +29,7 @@ _Public Routes_
 ```
 home: `/`
 all products: `/shop`
-departments: `/shop/:department-name`\*
+departments: `/shop/:department-name`*
 single Product: `/shop/:product-id`
 search results: `/search/:term`
 cart: `/cart`

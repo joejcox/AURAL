@@ -1,6 +1,6 @@
 # Documenting my journey
 
-## Initialise project, identify required routes and add folder structure indicated in readme
+## Initialise project, identify required routes and add folder structure indicated in readme. Set up config
 
 **Start date (UK):** 19/12/2021
 

@@ -2,7 +2,7 @@
 
 ## A music related e-commerce website built with React JS and Redux
 
-As I now have 18 days of no work due to Christmas Holidays I thought I would spend it
+As I now have 18 days of no work due to Christmas Holidays I have decided to build an e-commerce app
 
 ### [Live Demo](#) - Coming Soon
 

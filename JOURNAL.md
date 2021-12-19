@@ -25,6 +25,8 @@ As this is an e-commerce website, all of the routes are pretty standard. The web
 **Routes**
 
 _Public Routes_
+
+```
 home: `/`
 all products: `/shop`
 departments: `/shop/:department-name`\*
@@ -34,11 +36,15 @@ cart: `/cart`
 checkout: `/checkout`
 sign up: `/sign-up`
 sign in: `/sign-in`
+```
 
 _Private Routes_
+
+```
 account: `/account`
 wishlist: `/account/wishlist`
 orders: `/account/orders`
 settings: `/account/settings`
+```
 
 _\*department names will be saved in firestore as the document id, since user does not control these names, there should be no casing issues when using Firebase queries_

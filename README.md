@@ -122,30 +122,34 @@ I will use functional components with hooks for this project.
 ### File structure
 
 ```
-app.js
-index.js
+app.jsx
+index.jsx
 assets/
   styles/
   images/
 constants/
   index.js
+  types.js
+  routes.js
 core/
   CoreComponent/
-    index.js
-    index.test.js
+    index.jsx
+    index.test.jsx
 components/
   smart/
     SmartComponent/
-      index.js
-      index.test.js
+      index.jsx
+      index.test.jsx
   dumb/
     DumbComponent/
-      index.js
-      index.test.js
+      index.jsx
+      index.test.jsx
 pages/
   page/
-    index.js
-    index.test.js
+    index.jsx
+    index.test.jsx
+redux/
+  store.js
 hooks/
   useHook.js
 helpers/

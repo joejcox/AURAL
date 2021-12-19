@@ -1,4 +1,4 @@
-# Aural
+# AURAL
 
 ## A music related e-commerce website built with React JS and Redux
 

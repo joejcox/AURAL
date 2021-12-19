@@ -1,6 +1,6 @@
 # Documenting my journey
 
-## Initialise project, and identify required routes
+## Initialise project, identify required routes and add folder structure indicated in readme
 
 **Start date (UK):** 19/12/2021
 

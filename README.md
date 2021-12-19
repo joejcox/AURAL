@@ -99,11 +99,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ---
 
-### What products will be available on the website?
-
-The website will provide products related to music - vinyl records, CDs, tote bags and band/artist t-shirts.
-
-### How will I approach the project
+## Project Approach
 
 I will use Figma to design a mock up of the over all website and components. I will take design inspiration from [this website](https://www.websitebuilderexpert.com/designing-websites/free-ecommerce-website-templates/)
 
@@ -111,16 +107,20 @@ Once the mock up is complete I will look at identifying routes required, followe
 
 The project will then be initialised using `npx create-react-app aural --template redux`
 
+### What products will be available on the website?
+
+The website will provide products related to music - vinyl records, CDs, tote bags and band/artist t-shirts.
+
 ## Components
 
 I will use functional components with hooks for this project.
 
 ### File structure
 
+```
 app.js
 index.js
 assets/
-
 - styles/
 - images/
   constants/
@@ -142,10 +142,11 @@ assets/
   -- utils.js
   services/
   -- firebase.js
+```
 
-DB Structure
+### DB Structure
 
-_What collections do I need?_
+#### What collections do I need?
 
 - customers
 - products

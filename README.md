@@ -1,4 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Aural
+
+## A music related e-commerce website built with React JS and Redux
+
+As I now have 18 days of no work due to Christmas Holidays I thought I would spend it
+
+### [Live Demo](#) - Coming Soon
+
+## Expected Outcome:
+
+A fully functional ecommerce application with user authentication, database (products, customers, orders), basket + checkout with Stripe payments (add to basket + buy now), private routes for customer account and orders list.
+
+## Learning Outcomes:
+
+Using this project, I intend to learn how to use Redux and Testing libraries. I will also use the project to increase my knowledge with Firebase services.
+
+I also hope to pick up more useful information on database structure. With my previous project [Block. Social Media](https://github.com/joejcox/Block) I came to a standstill due to structure. I didn't plan it and did not know what I wanted or needed before doing so. This ended up in messy files, logic and a need to rework the database structure which meant a lot of refactoring within most files of the app. For this reason I have left it as it is and moved on to building this e-commerce app.
+
+During the build of this project I intend to develop a habit of outlining a project, its core tools, components and design before I even begin to code. I feel like this will provide a more enjoyable experience.
+
+## Tech used
+
+[React](https://reactjs.org/) - JavaScript Library | Create React App (redux template)
+
+[Redux](https://redux.js.org/) - State management
+
+[Redux-Toolkit](https://redux.js.org/introduction/getting-started) - Simplifying Redux with utilities
+
+[React Router Dom v6](https://reactrouter.com) - Routing
+
+[React Hook Form](https://react-hook-form.com) - Form validation
+
+[Firebase v9](https://firebase.google.com/) - Database, authentication and file storage
+
+[TailwindCSS v3](https://tailwindcss.com/docs/installation) - Styling
+
+[Craco](https://github.com/gsoft-inc/craco) - Create React App Config Override
+
+[HeroIcons](https://github.com/tailwindlabs/heroicons#react) - Icons
+
+[Snipcart](https://snipcart.com) - Cart
+
+[React Hot Toast](https://react-hot-toast.com) - Toast notifications
+
+[React Inner Image Zoom](https://github.com/laurenashpole/react-inner-image-zoom) - product image zoom
+
+[Emailjs](https://www.emailjs.com) - contact form, order notifications
+
+[React Slick](https://react-slick.neostack.com) - Product feed carousels
+
+[Stripe](https://stripe.com/docs/development) - Checkout and payment
+
+[React Helmet Async](https://github.com/staylor/react-helmet-async) - Page titles and metadata
+
+[Jest](https://jestjs.io/) - Test runner
+
+[React Testing Library](https://testing-library.com/docs/react-testing-library/example-intro/) - Component tests
+
+[Webpack](https://webpack.js.org/) - Bundler
+
+[Babel](https://babeljs.io/) - JavaScript Compiler
+
+[PostCSS](https://postcss.org/) - CSS Compiler
+
+[Autoprefixer](https://github.com/postcss/autoprefixer) - Vendor prefixes
+
+[Figma](https://www.figma.com/) - Website Mock up
 
 ## Available Scripts
 
@@ -31,11 +97,61 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### What products will be available on the website?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The website will provide products related to music - vinyl records, CDs, tote bags and band/artist t-shirts.
+
+### How will I approach the project
+
+I will use Figma to design a mock up of the over all website and components. I will take design inspiration from [this website](https://www.websitebuilderexpert.com/designing-websites/free-ecommerce-website-templates/)
+
+Once the mock up is complete I will look at identifying routes required, followed by core components and then any other components I require i.e. page components for each route.
+
+The project will then be initialised using `npx create-react-app aural --template redux`
+
+## Components
+
+I will use functional components with hooks for this project.
+
+### File structure
+
+app.js
+index.js
+assets/
+
+- styles/
+- images/
+  constants/
+  components/
+- core/
+  -- core-component/
+  ---- index.js
+  ---- tests.js
+- component-example/
+  -- index.js
+  -- tests.js
+  pages/
+- page/
+  -- index.js
+  -- tests.js
+  hooks/
+- useHook.js
+  helpers/
+  -- utils.js
+  services/
+  -- firebase.js
+
+DB Structure
+
+_What collections do I need?_
+
+- customers
+- products
+- orders
+
+_Note: To begin with (v1) I will not be using stock control_
 
 ## Learn More
 

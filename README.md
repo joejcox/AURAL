@@ -121,27 +121,29 @@ I will use functional components with hooks for this project.
 app.js
 index.js
 assets/
-- styles/
-- images/
-  constants/
-  components/
-- core/
-  -- core-component/
-  ---- index.js
-  ---- tests.js
-- component-example/
-  -- index.js
-  -- tests.js
-  pages/
-- page/
-  -- index.js
-  -- tests.js
-  hooks/
-- useHook.js
-  helpers/
-  -- utils.js
-  services/
-  -- firebase.js
+  styles/
+  images/
+constants/
+  index.js
+core/
+  core-component/
+    index.js
+    tests.js
+components/
+  component-example/
+    index.js
+    tests.js
+pages/
+  page/
+    index.js
+    tests.js
+hooks/
+  useHook.js
+helpers/
+  utils.js
+services/
+  firebase.js
+
 ```
 
 ### DB Structure

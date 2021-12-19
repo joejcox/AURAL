@@ -18,6 +18,10 @@ I also hope to pick up more useful information on database structure. With my pr
 
 During the build of this project I intend to develop a habit of outlining a project, its core tools, components and design before I even begin to code. I feel like this will provide a more enjoyable experience.
 
+#### Commiting
+
+Another aim is to focus on smaller commits, and providing shorter, but descriptive commit messages along with prefixes such as `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `style` and `test`
+
 ## Tech used
 
 [React](https://reactjs.org/) - JavaScript Library | Create React App (redux template)

@@ -3,6 +3,7 @@ import Swiper, { Navigation, Pagination } from "swiper"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
+import ProductCard from "./ProductCard"
 
 const ProductsCarousel = () => {
   useEffect(() => {
@@ -66,50 +67,16 @@ const ProductsCarousel = () => {
 
   return (
     // <!-- Slider main container -->
-    <div className="swiper w-full max-w-6xl h-80 px-6 xl:px-0 mx-auto my-16 relative">
+    <div className="swiper w-full max-w-6xl h-96 px-6 xl:px-0 mx-auto my-16 relative">
       {/* <!-- Additional required wrapper --> */}
-      <div className="swiper-wrapper">
+      <div className="swiper-wrapper pb-10">
         {/* <!-- Slides --> */}
-        <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
-          <div className=" w-52 h-52 bg-gray-400 mb-6"></div>
-          <h2 className="text-xl">Boards of Canada</h2>
-          <h3 className="text-md text-gray-700">MHTRTC</h3>
-        </div>
-        <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
-          <div className=" w-52 h-52 bg-gray-400 mb-6"></div>
-          <h2 className="text-xl">Yeah Yeah Yeahs</h2>
-          <h3 className="text-md text-gray-700">Gold Lion</h3>
-        </div>
-        <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
-          <div className=" w-52 h-52 bg-gray-400 mb-6"></div>
-          <h2 className="text-xl">Turnstile</h2>
-          <h3 className="text-md text-gray-700">Glow On</h3>
-        </div>
-        <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
-          <div className=" w-52 h-52 bg-gray-400 mb-6"></div>
-          <h2 className="text-xl">Aphex Twin</h2>
-          <h3 className="text-md text-gray-700">Selected Ambient Works</h3>
-        </div>
-        <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
-          <div className=" w-52 h-52 bg-gray-400 mb-6"></div>
-          <h2 className="text-xl">Aphex Twin</h2>
-          <h3 className="text-md text-gray-700">Selected Ambient Works</h3>
-        </div>
-        <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
-          <div className=" w-52 h-52 bg-gray-400 mb-6"></div>
-          <h2 className="text-xl">Aphex Twin</h2>
-          <h3 className="text-md text-gray-700">Selected Ambient Works</h3>
-        </div>
-        <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
-          <div className=" w-52 h-52 bg-gray-400 mb-6"></div>
-          <h2 className="text-xl">Aphex Twin</h2>
-          <h3 className="text-md text-gray-700">Selected Ambient Works</h3>
-        </div>
-        <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
-          <div className=" w-52 h-52 bg-gray-400 mb-6"></div>
-          <h2 className="text-xl">Aphex Twin</h2>
-          <h3 className="text-md text-gray-700">Selected Ambient Works</h3>
-        </div>
+        <ProductCard artist="Boards of Canada" album_name="MHTRTC" />
+        <ProductCard artist="Yeah Yeah Yeahs" album_name="Gold Lion" />
+        <ProductCard artist="Turnstile" album_name="Glow On" />
+        <ProductCard artist="Aphex Twin" album_name="Selected Ambient Works" />
+        <ProductCard artist="Bibio" album_name="Random Title" />
+        <ProductCard artist="Arcade Fire" album_name="Funeral" />
       </div>
       {/* <!-- If we need pagination --> */}
       <div className="swiper-pagination"></div>

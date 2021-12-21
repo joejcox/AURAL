@@ -16,7 +16,7 @@ const App = () => {
         </h2>
         <ProductsCarousel />
       </section>
-      <img className="mx-auto" src={screenshot} alt="Aural Mockup" />
+      <img className="mx-auto hidden" src={screenshot} alt="Aural Mockup" />
     </Layout>
   )
 }

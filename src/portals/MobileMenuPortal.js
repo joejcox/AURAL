@@ -7,7 +7,7 @@ const MobileMenuPortal = ({ children }) => {
   useEffect(() => {
     const body = document.body
 
-    menuContainer.setAttribute("id", "menu-portal")
+    menuContainer.classList.add("mobile-menu")
 
     body.appendChild(menuContainer)
     body.classList.add("overflow-hidden")

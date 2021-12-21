@@ -13,7 +13,7 @@ const HomeBanner = () => {
           width="500"
           className="mb-4 lg:mb-0 lg:pr-5"
         />
-        <div className="w-96 flex flex-col items-center lg:items-start">
+        <div className="w-96 flex flex-col justify-center items-center lg:items-start">
           <h1 className="text-center lg:text-left text-white font-bold uppercase text-6xl leading-xl">
             50% off new releases
           </h1>

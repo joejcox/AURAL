@@ -43,6 +43,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-main": "url('assets/images/sslmixer.jpg')",
+        carousel: "url('assets/images/recordstore.jpg')",
       },
     },
   },

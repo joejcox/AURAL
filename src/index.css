@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  --swiper-theme-color: orange;
+}
+
 .swiper-button-disabled {
   display: none;
+}
+
+.dark-bg .text-gray-700,
+.dark-bg .text-gray-800 {
+  color: white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
 }

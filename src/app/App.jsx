@@ -10,9 +10,16 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-      <section className="py-20">
+      <section className="pt-20 pb-10">
         <h2 className="text-3xl text-gray-800 text-center uppercase font-extrabold">
           Hottest Pre-Orders
+        </h2>
+        <ProductsCarousel />
+      </section>
+      <section className="pt-20 pb-10 bg-carousel bg-no-repeat bg-cover dark-bg relative z-0">
+        <div className="absolute top-0 right-0 left-0 bottom-0 bg-black opacity-25 -z-1"></div>
+        <h2 className="text-3xl text-white text-center uppercase font-extrabold">
+          Featured Releases
         </h2>
         <ProductsCarousel />
       </section>

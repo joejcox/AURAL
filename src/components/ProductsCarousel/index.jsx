@@ -5,7 +5,7 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import ProductCard from "./ProductCard"
 
-const ProductsCarousel = () => {
+const ProductsCarousel = ({ bgClass = "" }) => {
   useEffect(() => {
     new Swiper(".swiper", {
       // Optional parameters
@@ -67,7 +67,10 @@ const ProductsCarousel = () => {
 
   return (
     // <!-- Slider main container -->
-    <div className="swiper w-full max-w-6xl h-96 px-6 xl:px-0 mx-auto my-16 relative">
+    <div
+      className="swiper w-full max-w-6xl px-6 xl:px-0 mx-auto my-16 relative"
+      style={{ height: "360px" }}
+    >
       {/* <!-- Additional required wrapper --> */}
       <div className="swiper-wrapper pb-10">
         {/* <!-- Slides --> */}

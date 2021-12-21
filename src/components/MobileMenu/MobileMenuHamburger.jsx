@@ -11,7 +11,7 @@ const MobileMenuHamburger = () => {
 
   return (
     <span
-      className={`cursor-pointer z-50 ml-3 inline-block lg:hidden ${
+      className={`cursor-pointer z-999 ml-3 inline-block lg:hidden ${
         menuIsOpen ? "text-white" : "text-gray-800"
       }`}
       onClick={handleMenuToggle}

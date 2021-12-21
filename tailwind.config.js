@@ -30,10 +30,19 @@ module.exports = {
       borderRadius: {
         "4xl": "2rem",
       },
+      lineHeight: {
+        xl: "1",
+      },
+      zIndex: {
+        1: "1",
+        100: "100",
+        200: "200",
+        500: "500",
+        999: "999",
+        max: "2147483647",
+      },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/images/home-bg.jpg')",
-        "signup-bg": "url('/src/assets/images/form-bg-1.jpg')",
-        "signin-bg": "url('/src/assets/images/form-bg-2.jpg')",
+        "hero-main": "url('assets/images/sslmixer.jpg')",
       },
     },
   },

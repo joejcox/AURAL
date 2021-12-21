@@ -1,3 +1,5 @@
-const Home = () => <h1 className="text-3xl text-gray-800">Home</h1>
+import HomeBanner from "components/HomeBanner"
+
+const Home = () => <HomeBanner />
 
 export default Home

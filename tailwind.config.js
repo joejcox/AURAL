@@ -16,7 +16,7 @@ module.exports = {
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
-      primary: ["Roboto Slab", "serif"],
+      primary: ["Source Sans Pro", "sans-serif"],
       secondary: ["Nunito Sans", "sans-serif"],
     },
     wordBreak: {

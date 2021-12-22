@@ -67,10 +67,7 @@ const ProductsCarousel = ({ bgClass = "" }) => {
 
   return (
     // <!-- Slider main container -->
-    <div
-      className="swiper w-full max-w-6xl px-6 xl:px-0 mx-auto my-16 relative"
-      style={{ height: "360px" }}
-    >
+    <div className="swiper w-full h-72 max-w-6xl px-6 xl:px-0 mx-auto my-16 relative">
       {/* <!-- Additional required wrapper --> */}
       <div className="swiper-wrapper pb-10">
         {/* <!-- Slides --> */}
@@ -81,12 +78,10 @@ const ProductsCarousel = ({ bgClass = "" }) => {
         <ProductCard artist="Bibio" album_name="Random Title" />
         <ProductCard artist="Arcade Fire" album_name="Funeral" />
       </div>
-      {/* <!-- If we need pagination --> */}
-      <div className="swiper-pagination"></div>
 
       {/* <!-- If we need navigation buttons --> */}
-      <div className="swiper-button-prev absolute left-0 mr-20 top-1/3 text-gray-300"></div>
-      <div className="swiper-button-next absolute right-0 top-1/3 text-gray-300"></div>
+      <div className="swiper-button-prev hidden md:block absolute left-0 mr-20 top-1/3 text-gray-300"></div>
+      <div className="swiper-button-next hidden md:block  absolute right-0 top-1/3 text-gray-300"></div>
 
       {/* <!-- If we need scrollbar --> */}
       <div className="swiper-scrollbar"></div>

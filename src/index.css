@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-pagination-bullets {
+  display: none;
+}
+
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {

@@ -49,7 +49,9 @@ settings: `/account/settings`
 
 _\*department names will be saved in firestore as the document id, since user does not control these names, there should be no casing issues when using Firebase queries_
 
-[Completed: 19/12/2021](#)
+> Completed: 19/12/2021
+
+---
 
 ## Design Home Page
 
@@ -57,7 +59,9 @@ _\*department names will be saved in firestore as the document id, since user do
 
 A home page was designed using Figma. Mockup image can be found in assets folder.
 
-[Completed 21/12/2021](#)
+> Completed 21/12/2021
+
+---
 
 ## Create Home route and build home page foundation
 
@@ -65,10 +69,14 @@ A home page was designed using Figma. Mockup image can be found in assets folder
 
 Today I will build the home page. I will use placeholders for now for the products. I will need to implement React Slick as I'd like the featured releases to reside in a carousel.
 
-[Completed 22/12/2021](#)
+> Completed 22/12/2021
+
+---
 
 ## Create Fake JSON data for albums
 
 **Date:** 22/12/2021
 
-[Completed 22/12/2021](#)
+> Completed 22/12/2021
+
+---

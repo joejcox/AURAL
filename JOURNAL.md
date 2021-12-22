@@ -80,3 +80,11 @@ Today I will build the home page. I will use placeholders for now for the produc
 > Completed 22/12/2021
 
 ---
+
+## Update products JSON, fetch and store in state + render to productsList components
+
+**Date:** 22/12/2021
+
+- Add an ID to each product in the JSON
+- Fetch products from JSON and store in Redux state
+- Render products from state in to product list components

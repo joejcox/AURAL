@@ -14,7 +14,7 @@ const FooterLeft = () => (
         et malesuada fames ac turpis egestas. Phasellus ac lacinia lorem.
       </p>
       <div className="absolute w-full h-full left-0 top-0 opacity-10 -z-1 lg:pr-20 flex justify-center items-end">
-        <img src={lgLogo} alt="Aural Records" className="max-w-md" />
+        <img src={lgLogo} alt="Aural Records" className="max-w-md w-full" />
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ const FooterRight = () => {
         <h4 className="mt-10 lg:mt-0 uppercase text-white md:text-gray-600 lg:text-gray-300 text-4xl font-extrabold font-primary lg:pl-6 py-2 lg:border-l-8 border-l-main-400 mb-6">
           Contact Us
         </h4>
-        <form onSubmit={(e) => e.preventDefault} className="md:px-20 lg:px-0">
+        <form onSubmit={(e) => e.preventDefault()} className="md:px-20 lg:px-0">
           <div className="field w-full md:w-1/2 inline-block px-2">
             <input
               type="text"

@@ -4,7 +4,7 @@
 
 As I now have 18 days of no work due to Christmas Holidays I have decided to build an e-commerce app
 
-### [Live Demo](#) - Coming Soon
+### [Live Demo](https://aural.joecoxdev.com)
 
 ## Expected Outcome:
 

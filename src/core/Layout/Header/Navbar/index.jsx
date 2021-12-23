@@ -4,8 +4,11 @@ import { Link } from "react-router-dom"
 import { ShoppingBagIcon, SearchIcon } from "@heroicons/react/solid"
 import MobileMenu from "components/MobileMenu"
 import MobileMenuHamburger from "components/MobileMenu/MobileMenuHamburger"
+import useToggleOpen from "hooks/useToggleOpen"
 
 const Navbar = () => {
+  const { isOpen, toggleOpen } = useToggleOpen(false)
+
   return (
     <>
       <nav className="hidden lg:block ml-6" role="navigation">
@@ -23,10 +26,10 @@ const Navbar = () => {
           <Link to="/" className="ml-3">
             <ShoppingBagIcon className="w-6" />
           </Link>
-          <MobileMenuHamburger />
+          <MobileMenuHamburger isOpen={isOpen} toggleOpen={toggleOpen} />
         </div>
       </div>
-      <MobileMenu />
+      <MobileMenu isOpen={isOpen} toggleOpen={toggleOpen} />
     </>
   )
 }

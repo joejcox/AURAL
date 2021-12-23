@@ -17,16 +17,17 @@ const MobileMenu = ({ toggleOpen, isOpen }) => {
 
     document.addEventListener("mousedown", handleOutOfBoundsClick)
 
-    return () =>
+    return () => {
       document.removeEventListener("mousedown", handleOutOfBoundsClick)
+    }
   }, [isOpen, toggleOpen])
 
-  if (!isOpen) return null
+  const menuToggleClasses = isOpen ? "open" : "test"
 
   return (
     <>
       <div
-        className="h-full fixed top-0 right-0 max-w-full z-500 w-72 md:w-2/4 lg:hidden bg-black shadow flex flex-col items-center justify-center"
+        className={`mobile-menu ${menuToggleClasses} h-full fixed top-0 right-0 z-500 w-72 md:w-2/4 lg:hidden bg-black shadow flex flex-col items-center justify-center`}
         ref={menuRef}
       >
         <Link to="/" className="mb-12">
@@ -35,7 +36,9 @@ const MobileMenu = ({ toggleOpen, isOpen }) => {
         <MobileMenuLink path="/">Home</MobileMenuLink>
         <MobileMenuLink path="/">Shop</MobileMenuLink>
       </div>
-      <div className="flex justify-end cursor-pointer overflow-hidden lg:hidden absolute top-0 left-0 right-0 bottom-0 z-200 bg-black bg-opacity-75"></div>
+      <div
+        className={`mobile-menu-overlay ${menuToggleClasses} flex justify-end cursor-pointer lg:hidden absolute top-0 left-0 right-0 bottom-0 z-200 bg-black bg-opacity-75`}
+      ></div>
     </>
   )
 }

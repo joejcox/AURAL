@@ -21,3 +21,31 @@
   color: white;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
 }
+
+.mobile-menu,
+.mobile-menu-overlay {
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+.mobile-menu.open,
+.mobile-menu-overlay.open {
+  pointer-events: auto;
+}
+
+.mobile-menu {
+  max-width: 0;
+}
+
+.mobile-menu.open {
+  max-width: 100%;
+}
+
+.mobile-menu-overlay {
+  opacity: 0;
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}

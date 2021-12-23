@@ -35,6 +35,7 @@
 
 .mobile-menu {
   max-width: 0;
+  overflow: hidden;
 }
 
 .mobile-menu.open {

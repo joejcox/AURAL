@@ -4,6 +4,7 @@ import { selectProducts } from "features/products/productsSlice"
 import Container from "core/Container"
 import ButtonLink from "core/ButtonLink"
 import { Helmet } from "react-helmet-async"
+import { formatDate } from "helpers/utils"
 
 const SingleProduct = () => {
   const { productId } = useParams()
@@ -21,6 +22,9 @@ const SingleProduct = () => {
     )
   })
 
+  const dateInSeconds = parseInt(product.release_date)
+  const { date } = formatDate(dateInSeconds)
+
   return (
     <section className="py-16">
       <Helmet>
@@ -32,9 +36,20 @@ const SingleProduct = () => {
         <div className="flex flex-wrap items-center justify-between mb-4">
           <div className="w-full md:w-1/2">
             <h1 className="text-4xl">{product.artist}</h1>
-            <h2 className="text-xl mb-3">{product.album_title}</h2>
+            <h2 className="text-2xl mb-3 text-gray-500">
+              {product.album_title}
+            </h2>
           </div>
-          <ButtonLink path="/" classes="bg-black text-white hover:bg-main-400">
+          <ButtonLink
+            path="/"
+            classes="ml-0 md:ml-auto bg-black text-white hover:bg-main-400"
+          >
+            Add To Cart
+          </ButtonLink>
+          <ButtonLink
+            path="/"
+            classes="bg-main-400 text-white hover:bg-main-500 ml-2 mr-auto md:mr-0"
+          >
             Buy Now
           </ButtonLink>
         </div>
@@ -50,6 +65,9 @@ const SingleProduct = () => {
             </div>
             <div className="mt-4">
               <p>
+                <b>Releast Date:</b> {date}
+              </p>
+              <p>
                 <b>Genres:</b> {product.genres.join(", ")}
               </p>
               <p>
@@ -58,7 +76,7 @@ const SingleProduct = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <b>Track List:</b>
+            <h3 className="text-xl mb-2">Track List:</h3>
             <ol className="list-decimal list-inside">{trackList}</ol>
             <p className="my-2">
               <b>Total runtime: </b>

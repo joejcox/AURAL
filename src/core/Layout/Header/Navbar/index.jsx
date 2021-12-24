@@ -13,7 +13,7 @@ const Navbar = () => {
     <>
       <nav className="hidden lg:block ml-6" role="navigation">
         <NavbarLink path="/">Home</NavbarLink>
-        <NavbarLink path="/">Shop</NavbarLink>
+        <NavbarLink path="/products">Shop</NavbarLink>
       </nav>
       <div className="ml-auto flex items-center">
         <div className="hidden lg:inline-block">

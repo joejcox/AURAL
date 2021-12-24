@@ -139,7 +139,7 @@
             "currency": "GBP"
         },
         "tags": ["featured", "popular"],
-        "release_date": "0890110422489",
+        "release_date": "4729201239812",
         "artwork": "https://cdn.shopify.com/s/files/1/0161/8690/products/4AD0302LP_1024x.jpg"
     },
     {
@@ -177,5 +177,118 @@
         "tags": ["featured", "popular"],
         "release_date": "0890110422489",
         "artwork": "https://cdn.shopify.com/s/files/1/0105/4542/products/jonimitchell-blue_1200x1200.jpg"
+    },
+    {
+        "id": "xYz1AXXsGldjrZXhA27",
+        "type": "music",
+        "artist": "Bibio",
+        "album_title": "Ribbons",
+        "genres": ["Folktronica", "Experimental", "Indie Folk"],
+        "track_list": [
+            { "track_title": "Wildlife Analysis", "track_length": "1:15" },
+            { "track_title": "An Eachle in Your Mind", "track_length": "6:25" },
+            { "track_title": "The Color of the Fire", "track_length": "1:45" },
+            { "track_title": "Telephasic Workshop", "track_length": "6:35" },
+            { "track_title": "Triangles & Rhombuses", "track_length": "1:50" },
+            { "track_title": "Sixtyten", "track_length": "5:48" },
+            { "track_title": "Turquoise Hexagon Sun", "track_length": "5:07" },
+            { "track_title": "Kaini Industries", "track_length": "0:59" },
+            { "track_title": "Bocuma", "track_length": "1:35" },
+            { "track_title": "Roygbiv", "track_length": "2:31" },
+            { "track_title": "Rue the Whirl", "track_length": "6:39" },
+            { "track_title": "Aquarius", "track_length": "5:58" },
+            { "track_title": "Olson", "track_length": "1:31" },
+            { "track_title": "Pete Standing Alone", "track_length": "6:07" },
+            { "track_title": "Smokes Quantity", "track_length": "3:07" },
+            { "track_title": "Open the Light", "track_length": "4:25" },
+            { "track_title": "One Very Important Thought", "track_length": "1:25" }
+        ],
+        "runtime": "63:02",
+        "formats": ["Vinyl", "CD", "Mp3"],
+        "price": {
+            "vinyl": "23.99",
+            "cd": "12.99",
+            "currency": "GBP"
+        },
+        "tags": ["featured"],
+        "release_date": "4890110422489",
+        "artwork": "https://d1rgjmn2wmqeif.cloudfront.net/r/b/123830-1.jpg"
+    },
+    {
+        "id": "xYoO0s1sFHjrZXhA27",
+        "type": "music",
+        "artist": "Incubus",
+        "album_title": "Make Yourself",
+        "genres": ["Alternative Rock", "Funk Rock"],
+        "track_list": [
+            { "track_title": "Wildlife Analysis", "track_length": "1:15" },
+            { "track_title": "An Eachle in Your Mind", "track_length": "6:25" },
+            { "track_title": "The Color of the Fire", "track_length": "1:45" },
+            { "track_title": "Telephasic Workshop", "track_length": "6:35" },
+            { "track_title": "Triangles & Rhombuses", "track_length": "1:50" },
+            { "track_title": "Sixtyten", "track_length": "5:48" },
+            { "track_title": "Turquoise Hexagon Sun", "track_length": "5:07" },
+            { "track_title": "Kaini Industries", "track_length": "0:59" },
+            { "track_title": "Bocuma", "track_length": "1:35" },
+            { "track_title": "Roygbiv", "track_length": "2:31" },
+            { "track_title": "Rue the Whirl", "track_length": "6:39" },
+            { "track_title": "Aquarius", "track_length": "5:58" },
+            { "track_title": "Olson", "track_length": "1:31" },
+            { "track_title": "Pete Standing Alone", "track_length": "6:07" },
+            { "track_title": "Smokes Quantity", "track_length": "3:07" },
+            { "track_title": "Open the Light", "track_length": "4:25" },
+            { "track_title": "One Very Important Thought", "track_length": "1:25" }
+        ],
+        "runtime": "63:02",
+        "formats": ["Vinyl", "CD", "Mp3"],
+        "price": {
+            "vinyl": "23.99",
+            "cd": "12.99",
+            "currency": "GBP"
+        },
+        "tags": ["featured"],
+        "release_date": "4290110352489",
+        "artwork": "https://www.srcvinyl.com/media/catalog/product/cache/9/image/9df78eab33525d08d6e5fb8d27136e95/i/n/incubus.jpg"
+    },
+    {
+        "id": "xYoSsaslx83S0as",
+        "type": "music",
+        "artist": "Turnstile",
+        "album_title": "Glow On",
+        "genres": [
+            "Hardcore Punk",
+            "Punk Rock",
+            "Melodic Hardcore",
+            "Post Hardcore"
+        ],
+        "track_list": [
+            { "track_title": "Wildlife Analysis", "track_length": "1:15" },
+            { "track_title": "An Eachle in Your Mind", "track_length": "6:25" },
+            { "track_title": "The Color of the Fire", "track_length": "1:45" },
+            { "track_title": "Telephasic Workshop", "track_length": "6:35" },
+            { "track_title": "Triangles & Rhombuses", "track_length": "1:50" },
+            { "track_title": "Sixtyten", "track_length": "5:48" },
+            { "track_title": "Turquoise Hexagon Sun", "track_length": "5:07" },
+            { "track_title": "Kaini Industries", "track_length": "0:59" },
+            { "track_title": "Bocuma", "track_length": "1:35" },
+            { "track_title": "Roygbiv", "track_length": "2:31" },
+            { "track_title": "Rue the Whirl", "track_length": "6:39" },
+            { "track_title": "Aquarius", "track_length": "5:58" },
+            { "track_title": "Olson", "track_length": "1:31" },
+            { "track_title": "Pete Standing Alone", "track_length": "6:07" },
+            { "track_title": "Smokes Quantity", "track_length": "3:07" },
+            { "track_title": "Open the Light", "track_length": "4:25" },
+            { "track_title": "One Very Important Thought", "track_length": "1:25" }
+        ],
+        "runtime": "63:02",
+        "formats": ["Vinyl", "CD", "Mp3"],
+        "price": {
+            "vinyl": "23.99",
+            "cd": "12.99",
+            "currency": "GBP"
+        },
+        "tags": ["featured"],
+        "release_date": "3170110352459",
+        "artwork": "https://www.nuclearblast.com/media/catalog/product/cache/1ac2ce8062075a991ab4494b468dabe3/1/0/1000x1000_9651_1000x1000_4.jpg"
     }
 ]

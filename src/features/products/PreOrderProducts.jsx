@@ -4,7 +4,13 @@ import { selectProducts } from "./productsSlice"
 
 const PreOrderProducts = ({ theme, bgImgClass = "" }) => {
   const products = useSelector(selectProducts)
+  const today = new Date().getTime()
+  const preOrderProducts = products.featured.filter(
+    (product) => parseInt(product.release_date) > today
+  )
   const textColor = `${theme === "dark" ? "text-white" : "text-gray-800"}`
+
+  if (preOrderProducts.length <= 0) return null
   return (
     <section
       className={`pt-20 pb-10 bg-no-repeat bg-cover relative z-0 ${bgImgClass}`}
@@ -20,7 +26,7 @@ const PreOrderProducts = ({ theme, bgImgClass = "" }) => {
       <ProductsCarousel
         textColor={textColor}
         status={products.status}
-        products={products.featured}
+        products={preOrderProducts}
       />
     </section>
   )

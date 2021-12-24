@@ -5,6 +5,7 @@ import { useEffect } from "react"
 import { getData } from "features/products/productsSlice"
 import { useDispatch } from "react-redux"
 import SingleProduct from "components/Products/SingleProduct"
+import Shop from "pages/public/Shop"
 
 const App = () => {
   const dispatch = useDispatch()
@@ -17,6 +18,7 @@ const App = () => {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Shop />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
       </Routes>
     </Layout>

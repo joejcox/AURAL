@@ -60,7 +60,7 @@ const ProductsCarousel = ({ textColor, status, products }) => {
 
   return (
     // <!-- Slider main container -->
-    <div className="swiper w-full h-72 max-w-6xl px-6 xl:px-0 mx-auto my-16 relative">
+    <div className="swiper w-full h-80 max-w-6xl px-6 xl:px-0 mx-auto my-16 relative">
       {/* <!-- Additional required wrapper --> */}
       <div className="swiper-wrapper pb-10">
         {products.map((product) => (

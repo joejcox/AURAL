@@ -7,7 +7,7 @@ const HomeBannerText = () => (
     </h1>
     <ButtonLink
       path="/"
-      classes="block w-full max-w-sm sm:w-60 mt-8 lg:mt-2 text-center"
+      classes="block w-full max-w-sm sm:w-60 mt-8 lg:mt-2 text-center bg-main-400 hover:bg-black"
     >
       Shop Now
     </ButtonLink>

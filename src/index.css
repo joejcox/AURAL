@@ -34,12 +34,12 @@
 }
 
 .mobile-menu {
-  max-width: 0;
+  transform: translateX(100%);
   overflow: hidden;
 }
 
 .mobile-menu.open {
-  max-width: 100%;
+  transform: translate(0);
 }
 
 .mobile-menu-overlay {

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { selectProducts } from "features/products/productsSlice"
 import Container from "core/Container"
 import ButtonLink from "core/ButtonLink"
+import { Helmet } from "react-helmet-async"
 
 const SingleProduct = () => {
   const { productId } = useParams()
@@ -22,6 +23,11 @@ const SingleProduct = () => {
 
   return (
     <section className="py-16">
+      <Helmet>
+        <title>
+          {product.artist} - {product.album_title} | Aural Records
+        </title>
+      </Helmet>
       <Container>
         <div className="flex flex-wrap items-center justify-between mb-4">
           <div className="w-full md:w-1/2">

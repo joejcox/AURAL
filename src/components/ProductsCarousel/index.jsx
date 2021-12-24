@@ -5,30 +5,25 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import ProductCard from "./ProductCard"
 
-const ProductsCarousel = ({ bgClass = "" }) => {
+const ProductsCarousel = ({ textColor, status, products }) => {
   useEffect(() => {
     new Swiper(".swiper", {
       // Optional parameters
       loop: false,
-
-      // If we need pagination
+      observer: true,
+      observeParents: true,
       pagination: {
         el: ".swiper-pagination",
       },
-
       grid: {
         slidesPerColumnFill: "row",
         rows: 4,
       },
-
-      // Navigation arrows
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-
       spaceBetween: 40,
-
       breakpoints: {
         240: {
           slidesPerView: 1,
@@ -50,10 +45,6 @@ const ProductsCarousel = ({ bgClass = "" }) => {
           slidesPerView: 4,
           spaceBetween: 20,
         },
-        1580: {
-          slidesPerView: 6,
-          spaceBetween: 60,
-        },
       },
 
       // And if we need scrollbar
@@ -65,18 +56,20 @@ const ProductsCarousel = ({ bgClass = "" }) => {
     Swiper.use([Navigation, Pagination])
   }, [])
 
+  if (!status || status === "loading") return null
+
   return (
     // <!-- Slider main container -->
     <div className="swiper w-full h-72 max-w-6xl px-6 xl:px-0 mx-auto my-16 relative">
       {/* <!-- Additional required wrapper --> */}
       <div className="swiper-wrapper pb-10">
-        {/* <!-- Slides --> */}
-        <ProductCard artist="Boards of Canada" album_name="MHTRTC" />
-        <ProductCard artist="Yeah Yeah Yeahs" album_name="Gold Lion" />
-        <ProductCard artist="Turnstile" album_name="Glow On" />
-        <ProductCard artist="Aphex Twin" album_name="Selected Ambient Works" />
-        <ProductCard artist="Bibio" album_name="Random Title" />
-        <ProductCard artist="Arcade Fire" album_name="Funeral" />
+        {products.map((product) => (
+          <ProductCard
+            textColor={textColor}
+            data={product}
+            key={product.album_title}
+          />
+        ))}
       </div>
 
       {/* <!-- If we need navigation buttons --> */}

@@ -1,4 +1,5 @@
 [{
+        "id": "xYz1Also9rZXhcmkZ",
         "type": "music",
         "artist": "Boards of Canada",
         "album_title": "Music Has The Right To Children",
@@ -34,6 +35,7 @@
         "artwork": "https://via.placeholder.com/400x400"
     },
     {
+        "id": "xYz1AlsgDhaXhcmkZ",
         "type": "music",
         "artist": "Aphex Twin",
         "album_title": "Druqks",
@@ -69,6 +71,7 @@
         "artwork": "https://via.placeholder.com/400x400"
     },
     {
+        "id": "Roafg1Also9r202kZ",
         "type": "music",
         "artist": "Aleksandir",
         "album_title": "Yamaha",
@@ -104,6 +107,7 @@
         "artwork": "https://via.placeholder.com/400x400"
     },
     {
+        "id": "xYz45YgVfAld94DSmkZ",
         "type": "music",
         "artist": "Adrianne Lenker",
         "album_title": "Songs and Instrumentals",
@@ -139,6 +143,7 @@
         "artwork": "https://via.placeholder.com/400x400"
     },
     {
+        "id": "xYz1A5SudGldjrZXhA27",
         "type": "music",
         "artist": "Joni Mitchell",
         "album_title": "Blue",

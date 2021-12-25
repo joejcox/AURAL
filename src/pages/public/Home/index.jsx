@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet-async"
 import FeaturedProducts from "features/products/FeaturedProducts"
 import PreOrderProducts from "features/products/PreOrderProducts"
 import Spacer from "components/Spacer"
-import useAuth from "features/user/useAuth"
+// import useAuth from "features/user/useAuth"
 
 const Home = () => {
-  const { signIn, logout } = useAuth()
+  // const { signIn, logout } = useAuth()
 
   return (
     <>
@@ -14,8 +14,8 @@ const Home = () => {
         <title>Aural Records</title>
       </Helmet>
       <HomeBanner />
-      <button onClick={() => signIn("", "")}>Sign In</button>
-      <button onClick={logout}>Sign Out</button>
+      {/* <button onClick={() => signIn("", "")}>Sign In</button>
+      <button onClick={logout}>Sign Out</button> */}
       <PreOrderProducts theme="light" />
       <FeaturedProducts theme="dark" bgImgClass="bg-carousel" />
       <Spacer />

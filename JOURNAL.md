@@ -88,3 +88,15 @@ Today I will build the home page. I will use placeholders for now for the produc
 - Add an ID to each product in the JSON
 - Fetch products from JSON and store in Redux state
 - Render products from state in to product list components
+
+## Create a shop page, create logic to render pre-order items based on date and add firebase to the project
+
+**Date:** 24/12/2021
+
+I need to create the shop page to display all projects. For the pre-order carousel on the home page I will need to set up some logic to only render those which have the date ahead of current date. If there are no products with a future release date then I will not render the component.
+
+I am going to start adding firebase to the project and a simple reducer to store the user uid and email for now. Later I will want to implement Thunks to call when signing in, creating a user etc. Then I will need to store user data in Firebase also. When the user creates an account I will want it to create user via firebase auth and add some default user details to firebase firestore.
+
+In the app's useEffect I will then dispatch an action within the subscription function to get the current user details from Firebase based on the UID and store in the state.
+
+_Note:_ on create user, once everything is fulfilled I will navigate back to previous page user was on.

@@ -2,10 +2,8 @@ import { useSelector } from "react-redux"
 import { selectUser } from "features/user/userSlice"
 import { signOut, signInWithEmailAndPassword } from "firebase/auth"
 import auth from "services/firebase"
-import { useNavigate } from "react-router-dom"
 
 const useAuth = () => {
-  const navigate = useNavigate()
   const { user, authError } = useSelector(selectUser)
 
   const signin = async (data) => {
@@ -21,14 +19,13 @@ const useAuth = () => {
     }
   }
 
-  const signout = () => {
-    signOut(auth)
-      .then(() => {
-        navigate("/sign-in")
-      })
-      .catch((error) => {
-        console.log(error.message)
-      })
+  const signout = async () => {
+    try {
+      const response = await signOut(auth)
+      return response
+    } catch (error) {
+      return error.code
+    }
   }
 
   return { user, authError, signout, signin }

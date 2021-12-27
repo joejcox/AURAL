@@ -13,7 +13,23 @@ const userSlice = createSlice({
       state.user = action.payload
     },
     setError: (state, action) => {
-      state.error = action.payload
+      const errorCode = action.payload
+      let message = errorCode
+
+      if (errorCode === "auth/too-many-requests") {
+        message =
+          "Too many unsuccessful attempts, please reset password or try again later"
+      }
+
+      if (errorCode === "auth/wrong-password") {
+        message = "Incorrect password, please try again"
+      }
+
+      if (errorCode === "auth/user-not-found") {
+        message = "User does not exist, please try again"
+      }
+
+      state.error = message
     },
   },
 })

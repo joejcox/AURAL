@@ -73,8 +73,8 @@ const ProductsCarousel = ({ textColor, status, products }) => {
       </div>
 
       {/* <!-- If we need navigation buttons --> */}
-      <div className="swiper-button-prev hidden md:block absolute left-0 mr-20 top-1/3 text-gray-300"></div>
-      <div className="swiper-button-next hidden md:block  absolute right-0 top-1/3 text-gray-300"></div>
+      <div className="swiper-button-prev absolute left-0 mr-20 top-1/3 text-gray-300"></div>
+      <div className="swiper-button-next  absolute right-0 top-1/3 text-gray-300"></div>
 
       {/* <!-- If we need scrollbar --> */}
       <div className="swiper-scrollbar"></div>

@@ -7,11 +7,10 @@ import auth from "services/firebase"
 import { setError } from "features/user/userSlice"
 import { useSelector, useDispatch } from "react-redux"
 import { selectUser } from "features/user/userSlice"
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const SignInForm = ({ children }) => {
   const navigate = useNavigate()
-  const location = useLocation()
   const dispatch = useDispatch()
   const user = useSelector(selectUser)
   const {
@@ -25,15 +24,13 @@ const SignInForm = ({ children }) => {
   const { isSubmitting } = useFormState({ control })
 
   const onSubmit = async (data) => {
-    console.log(location)
-    let from = location.state || "/"
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password)
       resetField("email")
       resetField("password")
-      navigate(from, { replace: true })
+      navigate("/", { replace: true })
     } catch (error) {
-      dispatch(setError(error))
+      dispatch(setError(error.code))
       resetField("password")
     }
   }

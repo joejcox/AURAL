@@ -5,12 +5,10 @@ import { ShoppingBagIcon, SearchIcon } from "@heroicons/react/solid"
 import MobileMenu from "components/MobileMenu"
 import MobileMenuHamburger from "components/MobileMenu/MobileMenuHamburger"
 import useToggleOpen from "hooks/useToggleOpen"
-import { signOut } from "firebase/auth"
-import auth from "services/firebase"
 import useAuth from "hooks/useAuth"
 
 const Navbar = () => {
-  const { user } = useAuth()
+  const { user, signout } = useAuth()
 
   const { isOpen, toggleOpen } = useToggleOpen(false)
 
@@ -25,15 +23,7 @@ const Navbar = () => {
           {user ? (
             <button
               className="text-white bg-black inline-block py-2 px-4 uppercase"
-              onClick={() =>
-                signOut(auth)
-                  .then(() => {
-                    console.log("Signed out")
-                  })
-                  .catch((error) => {
-                    console.log(error.message)
-                  })
-              }
+              onClick={signout}
             >
               Sign Out
             </button>

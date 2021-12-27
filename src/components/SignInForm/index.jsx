@@ -1,4 +1,4 @@
-import FormContainer from "core/Container/FormContainer"
+import FormContainer from "core/Form/FormContainer"
 import ValidationError from "core/Form/ValidationError"
 import { useForm, useFormState } from "react-hook-form"
 import { Link } from "react-router-dom"

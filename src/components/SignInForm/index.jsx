@@ -1,56 +1,49 @@
 import FormContainer from "core/Container/FormContainer"
 import ValidationError from "core/Form/ValidationError"
-import { useState } from "react"
 import { useForm, useFormState } from "react-hook-form"
 import { Link } from "react-router-dom"
+import { signInWithEmailAndPassword } from "firebase/auth"
+import auth from "services/firebase"
+import { setError } from "features/user/userSlice"
+import { useSelector, useDispatch } from "react-redux"
+import { selectUser } from "features/user/userSlice"
+import { useNavigate } from "react-router-dom"
+import usePreviousPathname from "hooks/usePreviousPathname"
 
 const SignInForm = ({ children }) => {
-  const [firebaseError, setFirebaseError] = useState(null)
+  const navigate = useNavigate()
+  const { prevPath } = usePreviousPathname()
+  const dispatch = useDispatch()
+  const user = useSelector(selectUser)
   const {
     register,
     handleSubmit,
-    resetField,
     control,
+    resetField,
     formState: { errors },
   } = useForm()
-
-  const signIn = async (email, password) => {
-    console.log(email, password)
-    return { email: email, password: password }
-  }
 
   const { isSubmitting } = useFormState({ control })
 
   const onSubmit = async (data) => {
-    await signIn(data.email, data.password)
-      .then((response) => console.log(response))
-      .catch((error) => {
-        let message = null
-
-        if (error.code === "auth/too-many-requests") {
-          message =
-            "Too many unsuccessful attempts, please reset password or try again later"
-        }
-
-        if (error.code === "auth/wrong-password") {
-          message = "Incorrect password, please try again"
-        }
-
-        if (error.code === "auth/user-not-found") {
-          message = "User does not exist, please try again"
-        }
-
-        resetField("password")
-        setFirebaseError(message)
-      })
+    let from = prevPath || "/"
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password)
+      resetField("email")
+      resetField("password")
+      navigate(from, { replace: true })
+    } catch (error) {
+      dispatch(setError(error))
+      resetField("password")
+    }
   }
 
   return (
     <FormContainer>
       {children}
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-        {firebaseError && (
-          <p className="my-4 text-red-500 text-sm">{firebaseError}</p>
+        {user.error && (
+          <p className="my-4 text-red-500 text-sm">{user.error}</p>
         )}
 
         <div className="form-field">
@@ -97,7 +90,7 @@ const SignInForm = ({ children }) => {
           className="bg-black hover:bg-main-400 w-full py-2 px-4 mt-6 text-white inline-block outline-white border-0"
           type="submit"
           disabled={isSubmitting}
-          click={handleSubmit(onSubmit)}
+          onClick={handleSubmit(onSubmit)}
         >
           {isSubmitting ? "Signing In..." : "Sign In"}
         </button>

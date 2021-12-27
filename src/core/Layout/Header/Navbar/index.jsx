@@ -5,8 +5,13 @@ import { ShoppingBagIcon, SearchIcon } from "@heroicons/react/solid"
 import MobileMenu from "components/MobileMenu"
 import MobileMenuHamburger from "components/MobileMenu/MobileMenuHamburger"
 import useToggleOpen from "hooks/useToggleOpen"
+import { signOut } from "firebase/auth"
+import auth from "services/firebase"
+import useAuth from "hooks/useAuth"
 
 const Navbar = () => {
+  const { user } = useAuth()
+
   const { isOpen, toggleOpen } = useToggleOpen(false)
 
   return (
@@ -17,7 +22,24 @@ const Navbar = () => {
       </nav>
       <div className="ml-auto flex items-center">
         <div className="hidden lg:inline-block">
-          <ButtonLink path="/sign-in">Log In</ButtonLink>
+          {user ? (
+            <button
+              className="text-white bg-black inline-block py-2 px-4 uppercase"
+              onClick={() =>
+                signOut(auth)
+                  .then(() => {
+                    console.log("Signed out")
+                  })
+                  .catch((error) => {
+                    console.log(error.message)
+                  })
+              }
+            >
+              Sign Out
+            </button>
+          ) : (
+            <ButtonLink path="/sign-in">Sign In</ButtonLink>
+          )}
         </div>
         <div className="lg:ml-6 flex items-center">
           <button>

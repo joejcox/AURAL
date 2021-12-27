@@ -1,9 +1,8 @@
-import ProductsCarousel from "components/ProductsCarousel"
-import { useSelector } from "react-redux"
-import { selectProducts } from "./productsSlice"
+import ProductsCarousel from "components/Products/ProductsCarousel"
+import useProducts from "hooks/useProducts"
 
 const FeaturedProducts = ({ theme, bgImgClass = "" }) => {
-  const products = useSelector(selectProducts)
+  const { featured, status } = useProducts()
   const textColor = `${theme === "dark" ? "text-white" : "text-gray-800"}`
 
   return (
@@ -20,8 +19,8 @@ const FeaturedProducts = ({ theme, bgImgClass = "" }) => {
       </h2>
       <ProductsCarousel
         textColor={textColor}
-        status={products.status}
-        products={products.featured}
+        status={status}
+        products={featured}
       />
     </section>
   )

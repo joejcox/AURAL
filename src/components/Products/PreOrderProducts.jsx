@@ -1,11 +1,10 @@
-import ProductsCarousel from "components/ProductsCarousel"
-import { useSelector } from "react-redux"
-import { selectProducts } from "./productsSlice"
+import ProductsCarousel from "components/Products/ProductsCarousel"
+import useProducts from "hooks/useProducts"
 
 const PreOrderProducts = ({ theme, bgImgClass = "" }) => {
-  const products = useSelector(selectProducts)
+  const { products, status } = useProducts()
   const today = new Date().getTime()
-  const preOrderProducts = products.featured.filter(
+  const preOrderProducts = products.filter(
     (product) => parseInt(product.release_date) > today
   )
   const textColor = `${theme === "dark" ? "text-white" : "text-gray-800"}`
@@ -25,7 +24,7 @@ const PreOrderProducts = ({ theme, bgImgClass = "" }) => {
       </h2>
       <ProductsCarousel
         textColor={textColor}
-        status={products.status}
+        status={status}
         products={preOrderProducts}
       />
     </section>

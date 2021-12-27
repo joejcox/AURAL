@@ -1,7 +1,7 @@
 import HomeBanner from "components/HomeBanner"
 import { Helmet } from "react-helmet-async"
-import FeaturedProducts from "features/products/FeaturedProducts"
-import PreOrderProducts from "features/products/PreOrderProducts"
+import FeaturedProducts from "components/Products/FeaturedProducts"
+import PreOrderProducts from "components/Products/PreOrderProducts"
 import Spacer from "components/Spacer"
 
 const Home = () => (

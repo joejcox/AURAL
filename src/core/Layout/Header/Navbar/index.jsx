@@ -17,7 +17,7 @@ const Navbar = () => {
       </nav>
       <div className="ml-auto flex items-center">
         <div className="hidden lg:inline-block">
-          <ButtonLink path="/">Sign Up</ButtonLink>
+          <ButtonLink path="/sign-in">Log In</ButtonLink>
         </div>
         <div className="lg:ml-6 flex items-center">
           <button>

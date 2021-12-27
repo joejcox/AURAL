@@ -9,6 +9,7 @@ import Shop from "pages/public/Shop"
 import auth from "services/firebase"
 import { onAuthStateChanged } from "firebase/auth"
 import { setUser } from "features/user/userSlice"
+import SignIn from "pages/public/SignIn"
 
 const App = () => {
   const dispatch = useDispatch()
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Shop />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
+        <Route path="/sign-in" element={<SignIn />} />
       </Routes>
     </Layout>
   )

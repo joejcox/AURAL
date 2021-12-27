@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   user: null,
-  error: null,
+  authError: null,
 }
 
 const userSlice = createSlice({
@@ -11,6 +11,7 @@ const userSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload
+      state.authError = null
     },
     setError: (state, action) => {
       const errorCode = action.payload
@@ -29,7 +30,7 @@ const userSlice = createSlice({
         message = "User does not exist, please try again"
       }
 
-      state.error = message
+      state.authError = message
     },
   },
 })

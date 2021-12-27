@@ -2,17 +2,15 @@ import FormContainer from "core/Container/FormContainer"
 import ValidationError from "core/Form/ValidationError"
 import { useForm, useFormState } from "react-hook-form"
 import { Link } from "react-router-dom"
-import { signInWithEmailAndPassword } from "firebase/auth"
-import auth from "services/firebase"
+import { useDispatch } from "react-redux"
 import { setError } from "features/user/userSlice"
-import { useSelector, useDispatch } from "react-redux"
-import { selectUser } from "features/user/userSlice"
+import useAuth from "hooks/useAuth"
 import { useNavigate } from "react-router-dom"
 
 const SignInForm = ({ children }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const user = useSelector(selectUser)
+  const { authError, signin } = useAuth()
   const {
     register,
     handleSubmit,
@@ -24,24 +22,24 @@ const SignInForm = ({ children }) => {
   const { isSubmitting } = useFormState({ control })
 
   const onSubmit = async (data) => {
-    try {
-      await signInWithEmailAndPassword(auth, data.email, data.password)
-      resetField("email")
+    const response = await signin(data)
+
+    if (response.error) {
+      dispatch(setError(response.error.code))
       resetField("password")
-      navigate("/", { replace: true })
-    } catch (error) {
-      dispatch(setError(error.code))
-      resetField("password")
+      return false
     }
+
+    resetField("email")
+    resetField("password")
+    navigate("/", { replace: true })
   }
 
   return (
     <FormContainer>
       {children}
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-        {user.error && (
-          <p className="my-4 text-red-500 text-sm">{user.error}</p>
-        )}
+        {authError && <p className="my-4 text-red-500 text-sm">{authError}</p>}
 
         <div className="form-field">
           <input

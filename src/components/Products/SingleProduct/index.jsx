@@ -14,9 +14,8 @@ const SingleProduct = () => {
   if (!product) return null
 
   const trackList = product.track_list.map((track) => {
-    console.log(track.track_title)
     return (
-      <li>
+      <li key={track.track_title}>
         {track.track_title} ({track.track_length})
       </li>
     )

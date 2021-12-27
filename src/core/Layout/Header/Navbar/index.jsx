@@ -28,7 +28,9 @@ const Navbar = () => {
               Sign Out
             </button>
           ) : (
-            <ButtonLink path="/sign-in">Sign In</ButtonLink>
+            <ButtonLink classes="bg-black hover:bg-main-400" path="/sign-in">
+              Sign In
+            </ButtonLink>
           )}
         </div>
         <div className="lg:ml-6 flex items-center">

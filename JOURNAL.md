@@ -106,7 +106,7 @@ _Note:_ on create user, once everything is fulfilled I will navigate back to pre
 > Completed 27/12/2021
 > Also implemented redux + Sign in authentication
 
-## Sign up page, Cart, Wishlist
+## Sign up page, Cart
 
 **Date:** 27/12/2021
 
@@ -115,5 +115,30 @@ _Note:_ on create user, once everything is fulfilled I will navigate back to pre
 - Create Cart component rendering the CartList and the checkout button
 - Create CartItem component
 - Create CartList component which renders the CartItems and shows the number of items in cart at the top
-- Create modal portal with context which displays once an item is added to the cart, it will show buttons to continue shopping or view cart and check out.
-- Implement Wish List
+
+## User accounts and Wishlist
+
+**Date:** 29/12/2021
+
+- Add wish list features once user accounts are in place (users will need to be stored in firebase to associate a wish list with their account)
+- Show a user drop down in the navbar which has links for account, settings, wishlist and sign out. Also add a wish list icon to the main nav next to search and basket.
+
+## Messy Notes
+
+Think about where the user will want to go after signing up.
+
+On check out do we ask them if they want to sign up?
+
+If so, re-direct them back to check out once signed up and fill address with their details
+
+We will need to display a button to set a different address for the order.
+
+If they want to check out as a guest we will ask for their details but won't save them. If they have an account the details will be saved in Firestore
+
+Generate order number with each order
+
+Users will need email notifications that order has been completed. Also after stripe payment we will need to re-direct back, show the order number and a breakdown of the order from Firestore.
+
+How long do we store the cart? Do we save it in local storage for 1 day? 30 minutes? Most likely 30 minutes because what if the item goes out of stock / is removed.
+
+When an item is removed, do we tell the customer via email? How do we implement this?

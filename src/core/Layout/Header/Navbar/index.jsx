@@ -22,13 +22,13 @@ const Navbar = () => {
         <div className="hidden lg:inline-block">
           {user ? (
             <button
-              className="text-white bg-black inline-block py-2 px-4 uppercase"
+              className="text-white bg-black inline-block py-2 px-4 uppercase font-primary font-extrabold hover:bg-gray-800"
               onClick={signout}
             >
               Sign Out
             </button>
           ) : (
-            <ButtonLink classes="bg-black hover:bg-main-400" path="/sign-in">
+            <ButtonLink classes="bg-black hover:bg-gray-800" path="/sign-in">
               Sign In
             </ButtonLink>
           )}

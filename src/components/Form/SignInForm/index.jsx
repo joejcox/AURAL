@@ -1,5 +1,5 @@
-import FormContainer from "core/Form/FormContainer"
-import ValidationError from "core/Form/ValidationError"
+import FormContainer from "components/Form/FormContainer"
+import ValidationError from "components/Form/ValidationError"
 import { useForm, useFormState } from "react-hook-form"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"

@@ -106,8 +106,14 @@ _Note:_ on create user, once everything is fulfilled I will navigate back to pre
 > Completed 27/12/2021
 > Also implemented redux + Sign in authentication
 
-## Sign up page, Cart
+## Sign up page, Cart, Wishlist
 
 **Date:** 27/12/2021
 
-I will add the sign up page so users can create an account, along with a new redux reducer to hold cart information.
+- Create sign up page and form
+- Integrate sign up with firebase firestore
+- Create Cart component rendering the CartList and the checkout button
+- Create CartItem component
+- Create CartList component which renders the CartItems and shows the number of items in cart at the top
+- Create modal portal with context which displays once an item is added to the cart, it will show buttons to continue shopping or view cart and check out.
+- Implement Wish List

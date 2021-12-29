@@ -7,14 +7,14 @@ const CartItem = () => (
       <XIcon className="w-6 h-6 text-gray-400 hover:text-gray-500 cursor-pointer" />
     </div>
     <div className="flex">
-      <figure className="w-28 h-28">
+      <figure className="w-16 h-14 md:w-28 md:h-28">
         <img
           src="https://via.placeholder.com/130"
           alt="placeholder"
           className="w-full h-full object-cover"
         />
       </figure>
-      <div className="pl-6">
+      <div className="ml-2 md:ml-6">
         <h2 className="text-xl text-gray-500">
           <Link to="/cart" className="text-main-400 hover:underline">
             Music Has The Right To Children

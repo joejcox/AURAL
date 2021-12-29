@@ -6,6 +6,9 @@ import { useDispatch } from "react-redux"
 import { setError } from "features/user/userSlice"
 import useAuth from "hooks/useAuth"
 import { useNavigate } from "react-router-dom"
+import Field from "../Field"
+import FormButton from "../FormButton"
+import Label from "../Label"
 
 const SignInForm = ({ children }) => {
   const navigate = useNavigate()
@@ -40,8 +43,8 @@ const SignInForm = ({ children }) => {
       {children}
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         {authError && <p className="my-4 text-red-500 text-sm">{authError}</p>}
-
-        <div className="form-field">
+        <Field>
+          <Label htmlFor="email">Email:</Label>
           <input
             type="email"
             className="block placeholder-gray-400 border border-gray-200 bg-gray-50 text-gray-800 mb-2 w-full p-4 focus:border focus:outline-2 focus:outline-gray-200 outline-white"
@@ -62,8 +65,9 @@ const SignInForm = ({ children }) => {
           {errors.email && (
             <ValidationError>{errors.email?.message}</ValidationError>
           )}
-        </div>
-        <div className="field">
+        </Field>
+        <Field>
+          <Label htmlFor="password">Password:</Label>
           <input
             type="password"
             className="block placeholder-gray-400 border border-gray-200 bg-gray-50 text-gray-800 mb-2 w-full p-4 focus:border focus:outline-2 focus:outline-gray-200 outline-white"
@@ -80,15 +84,10 @@ const SignInForm = ({ children }) => {
           {errors.password && (
             <ValidationError>{errors.password?.message}</ValidationError>
           )}
-        </div>
-        <button
-          className="bg-black hover:bg-main-400 w-full py-2 px-4 mt-6 text-white inline-block outline-white border-0"
-          type="submit"
-          disabled={isSubmitting}
-          onClick={handleSubmit(onSubmit)}
-        >
+        </Field>
+        <FormButton disabled={isSubmitting} onClick={handleSubmit(onSubmit)}>
           {isSubmitting ? "Signing In..." : "Sign In"}
-        </button>
+        </FormButton>
 
         <div className="w-full flex justify-end">
           <Link

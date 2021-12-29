@@ -110,11 +110,13 @@ _Note:_ on create user, once everything is fulfilled I will navigate back to pre
 
 **Date:** 27/12/2021
 
-- Create sign up page and form
-- Integrate sign up with firebase firestore
+- Create sign up page and form - done 29/12/2021
+- Integrate sign up with firebase firestore - done 29/12/2021
 - Create Cart component rendering the CartList and the checkout button
 - Create CartItem component
 - Create CartList component which renders the CartItems and shows the number of items in cart at the top
+- Create CartPreview component which will be displayed when a new item is added to cart OR create a modal which pops up to say the item has been added and gives option to continue or go to cart (or straight to checkout?)
+- Add cart items to localStorage, persist for 60 minutes
 
 ## User accounts and Wishlist
 

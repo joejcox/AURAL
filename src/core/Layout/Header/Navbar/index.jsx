@@ -37,7 +37,7 @@ const Navbar = () => {
           <button>
             <SearchIcon className="w-6" />
           </button>
-          <Link to="/" className="ml-3">
+          <Link to="/cart" className="ml-3">
             <ShoppingBagIcon className="w-6" />
           </Link>
           <MobileMenuHamburger isOpen={isOpen} toggleOpen={toggleOpen} />

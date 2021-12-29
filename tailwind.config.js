@@ -45,6 +45,7 @@ module.exports = {
       backgroundImage: {
         "hero-main": "url('assets/images/sslmixer.jpg')",
         carousel: "url('assets/images/recordstore.jpg')",
+        cart: "url('https://i.pinimg.com/originals/31/b1/bd/31b1bdb06631a4d9184e05bfe8af5e64.jpg')",
       },
     },
   },

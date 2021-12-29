@@ -12,7 +12,7 @@ import Field from "../Field"
 const SignUpForm = ({ children }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { authError, signin } = useAuth()
+  const { authError, createAccount } = useAuth()
   const {
     register,
     handleSubmit,
@@ -25,16 +25,21 @@ const SignUpForm = ({ children }) => {
   const { isSubmitting } = useFormState({ control })
 
   const onSubmit = async (data) => {
-    const response = await signin(data)
+    const response = await createAccount(data)
 
     if (response.error) {
       dispatch(setError(response.error.code))
+      resetField("name")
+      resetField("email")
       resetField("password")
+      resetField("passwordRepeat")
       return false
     }
 
+    resetField("name")
     resetField("email")
     resetField("password")
+    resetField("passwordRepeat")
     navigate("/", { replace: true })
   }
 

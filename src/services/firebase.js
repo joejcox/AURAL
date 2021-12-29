@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-// import { getFirestore } from "firebase/firestore"
+import { getFirestore, setDoc, doc, getDoc } from "firebase/firestore"
 import { getAuth } from "firebase/auth"
 
 const firebaseConfig = {
@@ -13,8 +13,32 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig)
 
-// export const db = getFirestore()
+export const db = getFirestore()
 
 const auth = getAuth(firebaseApp)
+
+export const addUserToFirestore = async (uid, name, email) => {
+  try {
+    await setDoc(doc(db, "users", uid), {
+      uid: uid,
+      name: name,
+      email: email,
+    })
+    return "User successfully added to firestore"
+  } catch (error) {
+    return error.code
+  }
+}
+
+export const getUserFromFirestore = async (uid) => {
+  const docRef = doc(db, "users", uid)
+  const docSnap = await getDoc(docRef)
+
+  if (docSnap.exists()) {
+    return docSnap.data()
+  }
+
+  throw new Error("User does not exist in Firestore")
+}
 
 export default auth

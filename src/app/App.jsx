@@ -6,9 +6,9 @@ import { getData } from "features/products/productsSlice"
 import { useDispatch } from "react-redux"
 import SingleProduct from "components/Products/SingleProduct"
 import Shop from "pages/public/Shop"
-import auth from "services/firebase"
+import auth, { getUserFromFirestore } from "services/firebase"
 import { onAuthStateChanged } from "firebase/auth"
-import { setUser } from "features/user/userSlice"
+import { setError, setUser } from "features/user/userSlice"
 import SignIn from "pages/public/SignIn"
 import SignUp from "pages/public/SignUp"
 
@@ -16,9 +16,19 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        dispatch(setUser({ uid: user.uid, email: user.email }))
+    const getUserData = async (uid) => {
+      const response = await getUserFromFirestore(uid)
+
+      if (response.error) {
+        dispatch(setError(response.error.code))
+        return
+      }
+
+      dispatch(setUser(response))
+    }
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      if (authUser) {
+        getUserData(authUser.uid)
       } else {
         dispatch(setUser(null))
       }

@@ -30,6 +30,10 @@ const userSlice = createSlice({
         message = "User does not exist, please try again"
       }
 
+      if (errorCode === "auth/email-already-in-use") {
+        message = "Email already exists, please use another email"
+      }
+
       state.authError = message
     },
   },

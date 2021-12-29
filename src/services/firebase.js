@@ -21,8 +21,8 @@ export const addUserToFirestore = async (uid, name, email) => {
   try {
     await setDoc(doc(db, "users", uid), {
       uid: uid,
-      name: name,
-      email: email,
+      name: name.trim(),
+      email: email.trim(),
     })
     return "User successfully added to firestore"
   } catch (error) {

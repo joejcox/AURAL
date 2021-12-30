@@ -30,6 +30,8 @@ Another aim is to focus on smaller commits, and providing shorter, but descripti
 
 [Redux-Toolkit](https://redux.js.org/introduction/getting-started) - Simplifying Redux with utilities
 
+[Redux Persist](https://github.com/rt2zz/redux-persist) - Persist and rehydrate a redux store
+
 [React Router Dom v6](https://reactrouter.com) - Routing
 
 [React Hook Form](https://react-hook-form.com) - Form validation
@@ -42,11 +44,7 @@ Another aim is to focus on smaller commits, and providing shorter, but descripti
 
 [HeroIcons](https://github.com/tailwindlabs/heroicons#react) - Icons
 
-[Snipcart](https://snipcart.com) - Cart
-
 [React Hot Toast](https://react-hot-toast.com) - Toast notifications
-
-[React Inner Image Zoom](https://github.com/laurenashpole/react-inner-image-zoom) - product image zoom
 
 [Emailjs](https://www.emailjs.com) - contact form, order notifications
 

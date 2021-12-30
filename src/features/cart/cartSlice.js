@@ -29,8 +29,12 @@ export const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, { payload }) => {
-      const price = Number(payload.price.vinyl)
-      state.cartTotal -= price
+      const product = state.cartItems.find((item) => item.id === payload.id)
+      const quantity = product.quantity
+      const singleItemPrice = Number(payload.price.vinyl)
+      const totalItemsPrice = quantity * singleItemPrice
+
+      state.cartTotal -= totalItemsPrice
       state.cartItems = state.cartItems.filter((data) => data.id !== payload.id)
     },
     increaseQuantity: (state, { payload }) => {

@@ -5,8 +5,12 @@ import Container from "core/Container"
 import ButtonLink from "core/ButtonLink"
 import { Helmet } from "react-helmet-async"
 import { formatDate } from "helpers/utils"
+import useCart from "hooks/useCart"
+import { useDispatch } from "react-redux"
 
 const SingleProduct = () => {
+  const dispatch = useDispatch()
+  const { addToCart } = useCart()
   const { productId } = useParams()
   const { products } = useSelector(selectProducts)
   const product = products.find((item) => item.id === productId)
@@ -34,17 +38,15 @@ const SingleProduct = () => {
       <Container>
         <div className="flex flex-wrap items-center justify-between mb-4">
           <div className="w-full md:w-1/2">
-            <h1 className="text-4xl">{product.artist}</h1>
-            <h2 className="text-2xl mb-3 text-gray-500">
-              {product.album_title}
-            </h2>
+            <h1 className="text-4xl">{product.album_title}</h1>
+            <h2 className="text-2xl mb-3 text-gray-500">{product.artist}</h2>
           </div>
-          <ButtonLink
-            path="/"
-            classes="ml-0 md:ml-auto bg-black text-white hover:bg-main-400"
+          <button
+            onClick={() => dispatch(addToCart(product))}
+            className="inline-block py-3 px-6 ml-0 md:ml-auto bg-black text-white hover:bg-main-400 uppercase font-primary"
           >
             Add To Cart
-          </ButtonLink>
+          </button>
           <ButtonLink
             path="/"
             classes="bg-main-400 text-white hover:bg-main-500 ml-2 mr-auto md:mr-0"

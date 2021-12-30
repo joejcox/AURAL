@@ -21,12 +21,12 @@ const ProductCard = ({ textColor, data }) => {
           <ShoppingBagIcon className="text-white w-6 h-6" />
         </Link>
       </div>
-      <h2 className={`text-xl p-1 ${textColor}`}>
+      <h2 className={`text-center text-lg p-1 ${textColor}`}>
         <Link to={`/products/${id}`} className="hover:underline">
-          {artist}
+          {album_title}
         </Link>
       </h2>
-      <h3 className={`text-md ${textColor}`}>{album_title}</h3>
+      <h3 className={`text-md ${textColor}`}>{artist}</h3>
     </div>
   )
 }

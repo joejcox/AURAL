@@ -21,7 +21,7 @@ const Cart = () => {
       </Helmet>
       <Section>
         <Container>
-          <h1 className="text-3xl text-gray-600">
+          <h1 className="text-3xl text-gray-600 text-center lg:text-left">
             Your Cart{" "}
             {cartQuantity > 0
               ? cartQuantity === 1

@@ -7,15 +7,28 @@ import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { selectCart } from "features/cart/cartSlice"
 import ButtonLink from "core/ButtonLink"
+import { Helmet } from "react-helmet-async"
 
 const Cart = () => {
-  const { cartItems } = useSelector(selectCart)
+  const { cartItems, cartQuantity } = useSelector(selectCart)
 
   return (
     <>
+      <Helmet>
+        <title>
+          Cart {cartQuantity > 0 ? `(${cartQuantity})` : ""} | Aural Records
+        </title>
+      </Helmet>
       <Section>
         <Container>
-          <h1 className="text-3xl text-gray-600">Your Cart</h1>
+          <h1 className="text-3xl text-gray-600">
+            Your Cart{" "}
+            {cartQuantity > 0
+              ? cartQuantity === 1
+                ? `(${cartQuantity} item)`
+                : `(${cartQuantity} items)`
+              : ""}
+          </h1>
         </Container>
       </Section>
       {cartItems.length > 0 ? (

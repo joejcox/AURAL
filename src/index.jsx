@@ -7,15 +7,18 @@ import { store, persistor } from "app/store"
 import { Provider } from "react-redux"
 import { HelmetProvider } from "react-helmet-async"
 import { PersistGate } from "redux-persist/integration/react"
+import CartPreviewContextProvider from "context/CartPreviewContext"
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <HelmetProvider>
         <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <App />
-          </PersistGate>
+          <CartPreviewContextProvider>
+            <PersistGate loading={null} persistor={persistor}>
+              <App />
+            </PersistGate>
+          </CartPreviewContextProvider>
         </Provider>
       </HelmetProvider>
     </BrowserRouter>

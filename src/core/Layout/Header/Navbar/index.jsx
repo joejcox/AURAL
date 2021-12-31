@@ -6,6 +6,7 @@ import MobileMenu from "components/MobileMenu"
 import MobileMenuHamburger from "components/MobileMenu/MobileMenuHamburger"
 import useToggleOpen from "hooks/useToggleOpen"
 import useAuth from "hooks/useAuth"
+import CartPreview from "components/Cart/CartPreview"
 
 const Navbar = () => {
   const { user, signout } = useAuth()
@@ -18,7 +19,8 @@ const Navbar = () => {
         <NavbarLink path="/">Home</NavbarLink>
         <NavbarLink path="/products">Shop</NavbarLink>
       </nav>
-      <div className="ml-auto flex items-center">
+      <div className="ml-auto flex items-center relative">
+        <CartPreview />
         <div className="hidden lg:inline-block">
           {user ? (
             <button

@@ -1,19 +1,26 @@
 import { useParams } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { selectProducts } from "features/products/productsSlice"
 import Container from "core/Container"
 import ButtonLink from "core/ButtonLink"
 import { Helmet } from "react-helmet-async"
 import { formatDate } from "helpers/utils"
 import useCart from "hooks/useCart"
-import { useDispatch } from "react-redux"
+import { useContext } from "react"
+import { CartPreviewContext } from "context/CartPreviewContext"
 
 const SingleProduct = () => {
+  const { showCartPreview } = useContext(CartPreviewContext)
   const dispatch = useDispatch()
   const { addToCart } = useCart()
   const { productId } = useParams()
   const { products } = useSelector(selectProducts)
   const product = products.find((item) => item.docId === productId)
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product))
+    showCartPreview()
+  }
 
   if (!product) return null
 
@@ -42,7 +49,7 @@ const SingleProduct = () => {
             <h2 className="text-2xl mb-3 text-gray-500">{product.artist}</h2>
           </div>
           <button
-            onClick={() => dispatch(addToCart(product))}
+            onClick={handleAddToCart}
             className="inline-block py-3 px-6 ml-0 md:ml-auto bg-black text-white hover:bg-main-400 uppercase font-primary"
           >
             Add To Cart

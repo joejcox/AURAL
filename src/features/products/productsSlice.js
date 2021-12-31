@@ -4,7 +4,6 @@ import { collection, getDocs } from "firebase/firestore"
 
 const initialState = {
   featured: [],
-  preOrders: [],
   products: [],
   status: "idle",
   error: null,
@@ -40,10 +39,6 @@ export const productsSlice = createSlice({
           state.error = payload.code
           return
         }
-        const today = new Date().getTime()
-        state.preOrders = payload.filter(
-          (product) => Number(product.release_date) > today
-        )
         state.products.push(...payload)
         state.featured.push(...payload)
       }

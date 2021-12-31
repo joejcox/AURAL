@@ -11,7 +11,7 @@ const Products = () => {
         <title>Shop | Aural Records</title>
       </Helmet>
       {products.map((product) => (
-        <ProductGridItem product={product} key={product.id} />
+        <ProductGridItem product={product} key={product.docId} />
       ))}
     </ProductGridContainer>
   )

@@ -13,8 +13,12 @@ const ProductGridItem = ({ product }) => {
         </Link>
       </div>
       <div className="mt-4 text-center">
-        <h3 className="text-md">{product.artist}</h3>
-        <h4 className="text-sm text-gray-400">{product.album_title}</h4>
+        <h3 className="text-md">
+          <Link to={product.docId} className="text-main-400 hover:underline">
+            {product.album_title}
+          </Link>
+        </h3>
+        <h4 className="text-sm text-gray-400">{product.artist}</h4>
       </div>
     </div>
   )

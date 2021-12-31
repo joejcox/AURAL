@@ -15,7 +15,7 @@ import Cart from "components/Cart"
 import useProducts from "hooks/useProducts"
 
 const App = () => {
-  const { error, status } = useProducts()
+  const { error } = useProducts()
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -47,11 +47,6 @@ const App = () => {
   if (error)
     return (
       <div className="py-16 bg-gray-100 text-3cl text-center">501 Error</div>
-    )
-
-  if (status === "loading")
-    return (
-      <div className="py-16 bg-gray-100 text-3cl text-center">Loading...</div>
     )
 
   return (

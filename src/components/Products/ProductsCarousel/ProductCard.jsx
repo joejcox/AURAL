@@ -2,12 +2,12 @@ import { Link } from "react-router-dom"
 import { ShoppingBagIcon } from "@heroicons/react/solid"
 
 const ProductCard = ({ textColor, data }) => {
-  const { artist, album_title, id, artwork } = data
+  const { artist, album_title, artwork, docId } = data
 
   return (
     <div className="swiper-slide w-full md:w-1/2 xl:w-1/4 flex flex-col items-center">
       <div className="w-52 h-52  mb-6 relative">
-        <Link to={`/products/${id}`}>
+        <Link to={`/products/${docId}`}>
           <img
             src={artwork}
             alt={artist}
@@ -22,7 +22,7 @@ const ProductCard = ({ textColor, data }) => {
         </Link>
       </div>
       <h2 className={`text-center text-lg p-1 ${textColor}`}>
-        <Link to={`/products/${id}`} className="hover:underline">
+        <Link to={`/products/${docId}`} className="hover:underline">
           {album_title}
         </Link>
       </h2>

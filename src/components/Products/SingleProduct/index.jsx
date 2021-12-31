@@ -13,7 +13,7 @@ const SingleProduct = () => {
   const { addToCart } = useCart()
   const { productId } = useParams()
   const { products } = useSelector(selectProducts)
-  const product = products.find((item) => item.id === productId)
+  const product = products.find((item) => item.docId === productId)
 
   if (!product) return null
 

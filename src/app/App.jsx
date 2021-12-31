@@ -2,7 +2,7 @@ import Layout from "core/Layout"
 import { Route, Routes } from "react-router-dom"
 import Home from "pages/public/Home"
 import { useEffect } from "react"
-import { getData } from "features/products/productsSlice"
+import { getProductsFromFirestore } from "features/products/productsSlice"
 import { useDispatch } from "react-redux"
 import SingleProduct from "components/Products/SingleProduct"
 import Shop from "pages/public/Shop"
@@ -39,7 +39,7 @@ const App = () => {
   }, [dispatch])
 
   useEffect(() => {
-    dispatch(getData())
+    dispatch(getProductsFromFirestore())
   }, [dispatch])
 
   return (

@@ -71,9 +71,6 @@ const SingleProduct = () => {
               <p>
                 <b>Genres:</b> {product.genres.join(", ")}
               </p>
-              <p>
-                <b>Formats:</b> {product.formats.join(", ")}
-              </p>
             </div>
           </div>
           <div className="w-full md:w-1/2">

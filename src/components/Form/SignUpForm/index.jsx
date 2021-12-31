@@ -138,7 +138,7 @@ const SignUpForm = ({ children }) => {
           )}
         </Field>
         <FormButton disabled={isSubmitting} onClick={handleSubmit(onSubmit)}>
-          {isSubmitting ? "Signing In..." : "Sign In"}
+          {isSubmitting ? "Creating Account..." : "Create Account"}
         </FormButton>
       </form>
     </FormContainer>

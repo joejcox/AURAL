@@ -39,7 +39,10 @@ const MobileMenu = ({ toggleOpen, isOpen }) => {
           <MobileMenuLink path="/">Home</MobileMenuLink>
         </div>
         <div onClick={toggleOpen}>
-          <MobileMenuLink path="/products">Shop</MobileMenuLink>
+          <MobileMenuLink path="/shop">Shop</MobileMenuLink>
+        </div>
+        <div onClick={toggleOpen}>
+          <MobileMenuLink path="/shop/vinyl">Vinyl</MobileMenuLink>
         </div>
         <div onClick={toggleOpen}>
           {user ? (

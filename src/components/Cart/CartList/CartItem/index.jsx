@@ -9,7 +9,7 @@ const CartItem = ({ product }) => {
     <article className="bg-white mb-2 relative p-6">
       <div
         className="absolute top-3 right-3"
-        onClick={() => dispatch(removeFromCart(product))}
+        onClick={() => dispatch(removeFromCart(product.docId))}
       >
         <XIcon className="w-6 h-6 text-gray-400 hover:text-gray-500 cursor-pointer" />
       </div>

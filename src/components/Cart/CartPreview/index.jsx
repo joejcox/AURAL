@@ -2,24 +2,37 @@ import useCart from "hooks/useCart"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { XIcon } from "@heroicons/react/solid"
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { CartPreviewContext } from "context/CartPreviewContext"
 
 const CartPreview = () => {
+  const containerRef = useRef(null)
   const { classes, hideCartPreview } = useContext(CartPreviewContext)
   const dispatch = useDispatch()
   const { cartItems, removeFromCart } = useCart()
 
   useEffect(() => {
-    const timeout3secs = setTimeout(() => hideCartPreview(), 3000)
+    const handleOutOfBoundsClick = (e) => {
+      if (!containerRef.current.contains(e.target)) {
+        hideCartPreview()
+      }
+    }
 
-    return () => window.clearTimeout(timeout3secs)
-  }, [classes, hideCartPreview])
+    window.addEventListener("mousedown", handleOutOfBoundsClick)
+
+    return () => window.removeEventListener("mousedown", handleOutOfBoundsClick)
+  })
+
+  if (cartItems.length < 1) return null
 
   return (
     <div
-      className={`transition-opacity ease-in-out duration-200 motion-reduce:transition-none hidden lg:block p-2 absolute top-[150%] right-0 w-[400px] h-auto max-h-96 overflow-y-scroll z-[500] bg-white rounded shadow ${classes}`}
+      className={`pt-10 transition-opacity ease-in-out duration-200 motion-reduce:transition-none hidden lg:block p-2 absolute top-[150%] right-0 w-[400px] h-auto max-h-96 overflow-y-scroll z-[500] bg-white rounded shadow ${classes}`}
+      ref={containerRef}
     >
+      <div className="absolute top-2 right-2" onClick={hideCartPreview}>
+        <XIcon className="w-4 h-4 text-gray-400 hover:text-gray-800 cursor-pointer" />
+      </div>
       {cartItems.map((cartItem) => (
         <div
           className="w-full p-2 flex bg-gray-100 relative mb-2"
@@ -27,7 +40,7 @@ const CartPreview = () => {
         >
           <div
             className="absolute top-2 bottom-2 right-2 flex items-center"
-            onClick={() => dispatch(removeFromCart())}
+            onClick={() => dispatch(removeFromCart(cartItem.docId))}
           >
             <XIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
           </div>

@@ -17,8 +17,8 @@ const Navbar = () => {
     <>
       <nav className="hidden lg:block ml-6" role="navigation">
         <NavbarLink path="/">Home</NavbarLink>
-        <NavbarLink path="/shop">All Products</NavbarLink>
-        <NavbarLink path="/shop/vinyl">Shop Vinyl</NavbarLink>
+        <NavbarLink path="/shop">Shop</NavbarLink>
+        <NavbarLink path="/shop/vinyl">Vinyl</NavbarLink>
       </nav>
       <div className="ml-auto flex items-center relative">
         <CartPreview />

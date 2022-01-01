@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async"
 
 const Products = () => {
   const { products } = useProducts()
+
   return (
     <ProductGridContainer>
       <Helmet>

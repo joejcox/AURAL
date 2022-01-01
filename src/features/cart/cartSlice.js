@@ -14,8 +14,8 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, { payload }) => {
       const product = { ...payload, quantity: 1 }
-      const price = Number(product.price.vinyl)
-      const item = state.cartItems.find((item) => item.id === product.id)
+      const price = Number(payload.price.vinyl)
+      const item = state.cartItems.find((item) => item.docId === payload.docId)
 
       state.cartTotal += price
       state.cartQuantity += 1
@@ -27,9 +27,9 @@ export const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, { payload }) => {
-      const product = state.cartItems.find((item) => item.id === payload.id)
+      const product = state.cartItems.find((item) => item.docId === payload)
       const quantity = product.quantity
-      const singleItemPrice = Number(payload.price.vinyl)
+      const singleItemPrice = Number(product.price.vinyl)
       const totalItemsPrice = quantity * singleItemPrice
 
       if (state.cartQuantity < quantity) {
@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
         state.cartQuantity -= quantity
       }
       state.cartTotal -= totalItemsPrice
-      state.cartItems = state.cartItems.filter((data) => data.id !== payload.id)
+      state.cartItems = state.cartItems.filter((data) => data.docId !== payload)
     },
     increaseQuantity: (state, { payload }) => {
       const product = state.cartItems.find((item) => item.id === payload.id)

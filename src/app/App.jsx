@@ -62,8 +62,8 @@ const App = () => {
           }
         />
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/shop/vinyl" element={<ShopVinyl />} />
+        <Route exact path="/shop" element={<Shop />} />
+        <Route exact path="/shop/vinyl" element={<ShopVinyl />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />

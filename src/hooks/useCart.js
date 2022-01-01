@@ -8,11 +8,12 @@ import {
 } from "features/cart/cartSlice"
 
 const useCart = () => {
-  const { cartItems, cartTotal } = useSelector(selectCart)
+  const { cartItems, cartTotal, cartQuantity } = useSelector(selectCart)
 
   return {
     cartItems,
     cartTotal,
+    cartQuantity,
     addToCart,
     removeFromCart,
     increaseQuantity,

@@ -13,6 +13,7 @@ import SignIn from "pages/public/SignIn"
 import SignUp from "pages/public/SignUp"
 import Cart from "components/Cart"
 import useProducts from "hooks/useProducts"
+import ShopVinyl from "pages/public/Shop/ShopVinyl"
 
 const App = () => {
   const { error } = useProducts()
@@ -61,7 +62,8 @@ const App = () => {
           }
         />
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Shop />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/vinyl" element={<ShopVinyl />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />

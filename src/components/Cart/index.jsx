@@ -51,9 +51,9 @@ const Cart = () => {
         </section>
       ) : (
         <section className="bg-gray-100 py-16 mb-16">
-          <Container>
+          <Container classes="text-center lg:text-left">
             <h2 className="text-xl text-gray-800 mb-6">Your cart is empty</h2>
-            <ButtonLink path="/products">Shop Now</ButtonLink>
+            <ButtonLink path="/shop">Shop Now</ButtonLink>
           </Container>
         </section>
       )}

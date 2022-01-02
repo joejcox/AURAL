@@ -1,10 +1,12 @@
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useContext } from "react"
 import MobileMenuLink from "components/MobileMenu/MobileMenuLink"
 import logoWhite from "assets/images/logo-white.png"
 import { Link } from "react-router-dom"
 import useAuth from "features/user/useAuth"
+import { MobileMenuContext } from "context/MobileMenuContext"
 
-const MobileMenu = ({ toggleOpen, isOpen }) => {
+const MobileMenu = () => {
+  const { isOpen, toggleOpen } = useContext(MobileMenuContext)
   const { user, signout } = useAuth()
   const menuRef = useRef(null)
 
@@ -35,17 +37,11 @@ const MobileMenu = ({ toggleOpen, isOpen }) => {
         <Link to="/" className="mb-12" onClick={toggleOpen}>
           <img src={logoWhite} alt="Aural Logo White" width="150" />
         </Link>
-        <MobileMenuLink onClick={toggleOpen} path="/">
-          Home
-        </MobileMenuLink>
+        <MobileMenuLink path="/">Home</MobileMenuLink>
 
-        <MobileMenuLink onClick={toggleOpen} path="/shop">
-          Shop
-        </MobileMenuLink>
+        <MobileMenuLink path="/shop">Shop</MobileMenuLink>
 
-        <MobileMenuLink onClick={toggleOpen} path="/shop/vinyl">
-          Vinyl
-        </MobileMenuLink>
+        <MobileMenuLink path="/shop/vinyl">Vinyl</MobileMenuLink>
 
         <div onClick={toggleOpen}>
           {user ? (

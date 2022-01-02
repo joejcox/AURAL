@@ -4,19 +4,17 @@ import { Link } from "react-router-dom"
 import { ShoppingBagIcon, SearchIcon } from "@heroicons/react/solid"
 import MobileMenu from "components/MobileMenu"
 import MobileMenuHamburger from "components/MobileMenu/MobileMenuHamburger"
-import useToggleOpen from "hooks/useToggleOpen"
 import useAuth from "features/user/useAuth"
 import useCart from "features/cart/useCart"
 import CartPreview from "features/cart/CartPreview"
+import MobileMenuContextProvider from "context/MobileMenuContext"
 
 const Navbar = () => {
   const { user, signout } = useAuth()
   const { cartQuantity } = useCart()
 
-  const { isOpen, toggleOpen } = useToggleOpen(false)
-
   return (
-    <>
+    <MobileMenuContextProvider>
       <nav className="hidden lg:block ml-6" role="navigation">
         <NavbarLink path="/">Home</NavbarLink>
         <NavbarLink path="/shop">Shop</NavbarLink>
@@ -48,11 +46,11 @@ const Navbar = () => {
             </span>
             <ShoppingBagIcon className="w-6" />
           </Link>
-          <MobileMenuHamburger isOpen={isOpen} toggleOpen={toggleOpen} />
+          <MobileMenuHamburger />
         </div>
       </div>
-      <MobileMenu isOpen={isOpen} toggleOpen={toggleOpen} />
-    </>
+      <MobileMenu />
+    </MobileMenuContextProvider>
   )
 }
 

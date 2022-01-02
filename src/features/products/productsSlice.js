@@ -1,6 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-import { db } from "services/firebase"
-import { collection, getDocs } from "firebase/firestore"
+import { createSlice } from "@reduxjs/toolkit"
+import { getProductsFromFirestore } from "features/products/productsThunks"
 
 const initialState = {
   featured: [],
@@ -8,24 +7,6 @@ const initialState = {
   status: "idle",
   error: null,
 }
-
-export const getProductsFromFirestore = createAsyncThunk(
-  "products/getProductsFromFirestore",
-  async () => {
-    try {
-      const collectionRef = collection(db, "products")
-      const collectionSnap = await getDocs(collectionRef)
-      const products = []
-      collectionSnap.forEach((product) => {
-        products.push({ docId: product.id, ...product.data() })
-      })
-
-      return products
-    } catch (error) {
-      return error
-    }
-  }
-)
 
 export const productsSlice = createSlice({
   name: "products",

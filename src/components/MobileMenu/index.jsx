@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react"
 import MobileMenuLink from "components/MobileMenu/MobileMenuLink"
 import logoWhite from "assets/images/logo-white.png"
 import { Link } from "react-router-dom"
-import useAuth from "hooks/useAuth"
+import useAuth from "features/user/useAuth"
 
 const MobileMenu = ({ toggleOpen, isOpen }) => {
   const { user, signout } = useAuth()
@@ -35,15 +35,18 @@ const MobileMenu = ({ toggleOpen, isOpen }) => {
         <Link to="/" className="mb-12" onClick={toggleOpen}>
           <img src={logoWhite} alt="Aural Logo White" width="150" />
         </Link>
-        <div onClick={toggleOpen}>
-          <MobileMenuLink path="/">Home</MobileMenuLink>
-        </div>
-        <div onClick={toggleOpen}>
-          <MobileMenuLink path="/shop">Shop</MobileMenuLink>
-        </div>
-        <div onClick={toggleOpen}>
-          <MobileMenuLink path="/shop/vinyl">Vinyl</MobileMenuLink>
-        </div>
+        <MobileMenuLink onClick={toggleOpen} path="/">
+          Home
+        </MobileMenuLink>
+
+        <MobileMenuLink onClick={toggleOpen} path="/shop">
+          Shop
+        </MobileMenuLink>
+
+        <MobileMenuLink onClick={toggleOpen} path="/shop/vinyl">
+          Vinyl
+        </MobileMenuLink>
+
         <div onClick={toggleOpen}>
           {user ? (
             <button

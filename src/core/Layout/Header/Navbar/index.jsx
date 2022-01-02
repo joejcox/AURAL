@@ -5,9 +5,9 @@ import { ShoppingBagIcon, SearchIcon } from "@heroicons/react/solid"
 import MobileMenu from "components/MobileMenu"
 import MobileMenuHamburger from "components/MobileMenu/MobileMenuHamburger"
 import useToggleOpen from "hooks/useToggleOpen"
-import useAuth from "hooks/useAuth"
-import useCart from "hooks/useCart"
-import CartPreview from "components/Cart/CartPreview"
+import useAuth from "features/user/useAuth"
+import useCart from "features/cart/useCart"
+import CartPreview from "features/cart/CartPreview"
 
 const Navbar = () => {
   const { user, signout } = useAuth()

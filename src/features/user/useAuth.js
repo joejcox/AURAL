@@ -8,7 +8,7 @@ import {
 import auth, { addUserToFirestore } from "services/firebase"
 
 const useAuth = () => {
-  const { user, authError } = useSelector(selectUser)
+  const { user, authError, loading } = useSelector(selectUser)
 
   // Sign in with Firebase auth. Auth listener in app.jsx will set redux state with response.user
   // app.jsx state update will also get user from firestore based on uid and add to state along with response
@@ -62,7 +62,7 @@ const useAuth = () => {
     }
   }
 
-  return { user, authError, signout, signin, createAccount }
+  return { user, authError, loading, signout, signin, createAccount }
 }
 
 export default useAuth

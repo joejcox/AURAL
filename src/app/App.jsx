@@ -15,6 +15,9 @@ import Cart from "views/public/Cart"
 import useProducts from "features/products/useProducts"
 import ShopVinyl from "views/public/Shop/ShopVinyl"
 import Error404 from "views/public/Error404"
+import Account from "views/private/Account"
+import AccountSettings from "views/private/Account/AccountSettings"
+import PrivateRoute from "components/PrivateRoute"
 
 const App = () => {
   // if there's an error getting products, pull it from useProducts hook within products feature
@@ -70,6 +73,10 @@ const App = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/account" element={<PrivateRoute />}>
+          <Route index path="/account" element={<Account />} />
+          <Route path="/account/settings" element={<AccountSettings />} />
+        </Route>
       </Routes>
     </Layout>
   )

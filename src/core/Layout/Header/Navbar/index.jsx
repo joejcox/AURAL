@@ -19,6 +19,7 @@ const Navbar = () => {
         <NavbarLink path="/">Home</NavbarLink>
         <NavbarLink path="/shop">Shop</NavbarLink>
         <NavbarLink path="/shop/vinyl">Vinyl</NavbarLink>
+        <NavbarLink path="/account">Account</NavbarLink>
       </nav>
       <div className="ml-auto flex items-center relative">
         <CartPreview />

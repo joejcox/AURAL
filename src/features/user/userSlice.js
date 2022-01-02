@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
   user: null,
   authError: null,
+  loading: true,
 }
 
 const userSlice = createSlice({
@@ -12,6 +13,7 @@ const userSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload
       state.authError = null
+      state.loading = false
     },
     setError: (state, action) => {
       const errorCode = action.payload

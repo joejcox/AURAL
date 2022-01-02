@@ -1,5 +1,6 @@
 # Todos
 
+- Redo layout of SingleProduct component to accommodate variations
 - Create user account functions such as updating name, address, email, reset password, view orders
 - Add user details to firestore
 - Implement Stripe

@@ -120,19 +120,17 @@ _Note:_ on create user, once everything is fulfilled I will navigate back to pre
 - Create CartPreview component which will be displayed when a new item is added to cart OR create a modal which pops up to say the item has been added and gives option to continue or go to cart (or straight to checkout?) - done 31/12/2021
 - Add cart items to localStorage - done 30/12/2021
 
-## Cart Preview for mobile, cart quantity indicator in navbar on cart icon, mouseOver cartPreview keep open
+> Completed 31/12/2021
+
+## Cart Preview for mobile, cart quantity indicator in navbar on cart icon, cart preview to persist until user clicks outside or clicks close
 
 **Date:** 31/12/2021
 
-Show an indicator that an item was successfully added to cart on mobile
-
-Show a number of the cart quantity in the navbar on top of the shopping cart icon
-
-If the cartPreview has a mouse over it, keep it open, otherwise close it after 3 seconds.
+> Completed 02/12/2021
 
 ## User accounts and Wishlist
 
-**Date:** 02/01/2022
+**Date:** 01/01/2022
 
 - Add wish list features once user accounts are in place (users will need to be stored in firebase to associate a wish list with their account)
 - Show a user drop down in the navbar which has links for account, settings, wishlist and sign out. Also add a wish list icon to the main nav next to search and basket.

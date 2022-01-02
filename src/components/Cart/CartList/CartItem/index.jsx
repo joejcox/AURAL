@@ -24,7 +24,7 @@ const CartItem = ({ product }) => {
         <div className="ml-2 md:ml-6">
           <h2 className="text-xl text-gray-500">
             <Link
-              to={`/products/${product.id}`}
+              to={`/products/${product.docId}`}
               className="text-main-400 hover:underline"
             >
               {product.album_title}

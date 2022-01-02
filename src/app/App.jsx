@@ -17,10 +17,12 @@ import ShopVinyl from "views/public/Shop/ShopVinyl"
 import Error404 from "views/public/Error404"
 
 const App = () => {
+  // if there's an error getting products, pull it from useProducts hook within products feature
   const { error } = useProducts()
   const dispatch = useDispatch()
 
   useEffect(() => {
+    // await user data from firestore then set global user state with the new information
     const getUserData = async (uid) => {
       const response = await getUserFromFirestore(uid)
 
@@ -31,7 +33,11 @@ const App = () => {
 
       dispatch(setUser(response))
     }
+
+    // firebase auth listener, when a user logs in this will trigger
     const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      // if the user exists we will run the getUserData function to set global user state
+      // if no user, then we need to set the global user state to null
       if (authUser) {
         getUserData(authUser.uid)
       } else {
@@ -39,10 +45,12 @@ const App = () => {
       }
     })
 
+    // unsubscribe from auth listener on dismount
     return () => unsubscribe()
   }, [dispatch])
 
   useEffect(() => {
+    // dispatch the thunk in products feature to pull products from firestore and set in global products state
     dispatch(getProductsFromFirestore())
   }, [dispatch])
 

@@ -7,6 +7,8 @@ import {
   decreaseQuantity,
 } from "features/cart/cartSlice"
 
+// cart hook to put all cart actions and state in one place
+
 const useCart = () => {
   const { cartItems, cartTotal, cartQuantity } = useSelector(selectCart)
 

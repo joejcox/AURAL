@@ -3,6 +3,7 @@ import { useContext } from "react"
 import { MobileMenuContext } from "context/MobileMenuContext"
 
 const MobileMenuHamburger = () => {
+  // get menu state from context and pass toggle function to hamburger
   const { isOpen, toggleOpen } = useContext(MobileMenuContext)
 
   return (

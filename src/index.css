@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* swiper.js styles, used for carousels */
+
 .swiper-pagination-bullets {
   display: none;
 }
@@ -16,11 +18,15 @@
   display: none;
 }
 
+/* dark class for carousel components that have a dark image behind */
+
 .dark-bg .text-gray-700,
 .dark-bg .text-gray-800 {
   color: white;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
 }
+
+/* mobile menu styles when open class is appended */
 
 .mobile-menu,
 .mobile-menu-overlay {

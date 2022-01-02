@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 
+// main component to use for links to routes which need to look like primary buttons
 const ButtonLink = ({ children, path, classes }) => (
   <Link
     to={path}

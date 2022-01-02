@@ -22,11 +22,14 @@ const SignUpForm = ({ children }) => {
     formState: { errors },
   } = useForm()
 
+  // react hook form requires control and useFormState hook to get submitting state
   const { isSubmitting } = useFormState({ control })
 
+  // isSubmitting can only be used when the submit function is asynchronous
   const onSubmit = async (data) => {
     const response = await createAccount(data)
 
+    // error codes are handled in the userSlice within features/user
     if (response.error) {
       dispatch(setError(response.error.code))
       resetField("name")
@@ -40,6 +43,11 @@ const SignUpForm = ({ children }) => {
     resetField("email")
     resetField("password")
     resetField("passwordRepeat")
+
+    // react router v6 uses this new navigate feature
+    // we use { replace: true } in order not to store this route to history
+    // this means that if the user goes back, it will not return to this page
+    // the reason we want to avoid this is because they do not need to sign up again
     navigate("/", { replace: true })
   }
 

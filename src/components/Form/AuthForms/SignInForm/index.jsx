@@ -22,11 +22,15 @@ const SignInForm = ({ children }) => {
     formState: { errors },
   } = useForm()
 
+  // react hook form requires control and useFormState hook to get submitting state
   const { isSubmitting } = useFormState({ control })
 
+  // isSubmitting can only be used when the submit function is asynchronous
   const onSubmit = async (data) => {
+    // the response should either return true or an error with a firebase error code
     const response = await signin(data)
 
+    // error codes are handled in the userSlice within features/user
     if (response.error) {
       dispatch(setError(response.error.code))
       resetField("password")

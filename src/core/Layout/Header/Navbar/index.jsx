@@ -6,10 +6,12 @@ import MobileMenu from "components/MobileMenu"
 import MobileMenuHamburger from "components/MobileMenu/MobileMenuHamburger"
 import useToggleOpen from "hooks/useToggleOpen"
 import useAuth from "hooks/useAuth"
+import useCart from "hooks/useCart"
 import CartPreview from "components/Cart/CartPreview"
 
 const Navbar = () => {
   const { user, signout } = useAuth()
+  const { cartQuantity } = useCart()
 
   const { isOpen, toggleOpen } = useToggleOpen(false)
 
@@ -40,7 +42,10 @@ const Navbar = () => {
           <button>
             <SearchIcon className="w-6" />
           </button>
-          <Link to="/cart" className="ml-3">
+          <Link to="/cart" className="ml-3 relative">
+            <span className="absolute -top-1 -right-1 rounded-full w-[1.1rem] h-[1.1rem] flex items-center justify-center bg-main-400 text-white font-primary font-extrabold text-xs">
+              {cartQuantity}
+            </span>
             <ShoppingBagIcon className="w-6" />
           </Link>
           <MobileMenuHamburger isOpen={isOpen} toggleOpen={toggleOpen} />

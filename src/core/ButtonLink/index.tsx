@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 interface ButtonLinkProps {
   children: ReactNode
   path: string
-  classes: string
+  classes?: string
 }
 
 // main component to use for links to routes which need to look like primary buttons

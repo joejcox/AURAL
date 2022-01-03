@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom"
-import { useEffect, useMemo } from "react"
+import { FunctionComponent, ReactNode, useEffect, useMemo } from "react"
 
-const MobileMenuPortal = ({ children }) => {
+const MobileMenuPortal: FunctionComponent<ReactNode> = ({ children }) => {
   const menuContainer = useMemo(() => document.createElement("div"), [])
 
   useEffect(() => {

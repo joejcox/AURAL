@@ -1,11 +1,22 @@
-import { useEffect } from "react"
+import { FunctionComponent, useEffect } from "react"
 import Swiper, { Navigation, Pagination } from "swiper"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 import ProductCard from "./ProductCard"
+import { Product } from "features/products"
 
-const ProductsCarousel = ({ textColor, status, products }) => {
+export interface ProductsCarouselProps {
+  textColor: string
+  status: string | null
+  products: Product[]
+}
+
+const ProductsCarousel: FunctionComponent<ProductsCarouselProps> = ({
+  textColor,
+  status,
+  products,
+}) => {
   useEffect(() => {
     new Swiper(".swiper", {
       // Optional parameters
@@ -16,7 +27,6 @@ const ProductsCarousel = ({ textColor, status, products }) => {
         el: ".swiper-pagination",
       },
       grid: {
-        slidesPerColumnFill: "row",
         rows: 4,
       },
       navigation: {

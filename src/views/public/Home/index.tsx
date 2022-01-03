@@ -2,8 +2,9 @@ import HomeBanner from "components/HomeBanner"
 import { Helmet } from "react-helmet-async"
 import FeaturedProducts from "features/products/FeaturedProducts"
 import PreOrderProducts from "features/products/PreOrderProducts"
+import { FunctionComponent } from "react"
 
-const Home = () => (
+const Home: FunctionComponent = () => (
   <>
     <Helmet>
       <title>Aural Records</title>

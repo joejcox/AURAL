@@ -1,7 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { getProductsFromFirestore } from "features/products/productsThunks"
+import { Product } from "features/products"
 
-const initialState = {
+interface ProductsInitialState {
+  featured: Product[]
+  products: Product[]
+  status?: string
+  error?: string | null
+}
+
+interface ProductsState {
+  products: ProductsInitialState
+}
+
+const initialState: ProductsInitialState = {
   featured: [],
   products: [],
   status: "idle",
@@ -16,7 +28,7 @@ export const productsSlice = createSlice({
     builder.addCase(
       getProductsFromFirestore.fulfilled,
       (state, { payload }) => {
-        if (payload instanceof Error) {
+        if (payload.error) {
           state.error = payload.code
           return
         }
@@ -27,8 +39,6 @@ export const productsSlice = createSlice({
   },
 })
 
-export const { getData, setData } = productsSlice.actions
-
-export const selectProducts = (state) => state.products
+export const selectProducts = (state: ProductsState) => state.products
 
 export default productsSlice.reducer

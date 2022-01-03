@@ -7,8 +7,9 @@ import { Link } from "react-router-dom"
 import useCart from "features/cart/useCart"
 import ButtonLink from "core/ButtonLink"
 import { Helmet } from "react-helmet-async"
+import { FunctionComponent } from "react"
 
-const Cart = () => {
+const Cart: FunctionComponent = () => {
   const { cartItems, cartQuantity } = useCart()
 
   return (

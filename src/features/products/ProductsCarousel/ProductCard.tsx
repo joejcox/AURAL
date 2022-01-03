@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom"
 import { ShoppingBagIcon } from "@heroicons/react/solid"
+import { Product } from "features/products"
+import { FunctionComponent } from "react"
 
-const ProductCard = ({ textColor, data }) => {
+interface ProductCardProps {
+  textColor: string
+  data: Product
+}
+
+const ProductCard: FunctionComponent<ProductCardProps> = ({
+  textColor,
+  data,
+}) => {
   const { artist, album_title, artwork, docId } = data
 
   return (

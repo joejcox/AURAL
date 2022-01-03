@@ -17,7 +17,11 @@ export const db = getFirestore()
 
 const auth = getAuth(firebaseApp)
 
-export const addUserToFirestore = async (uid, name, email) => {
+export const addUserToFirestore = async (
+  uid: string,
+  name: string,
+  email: string
+) => {
   try {
     await setDoc(doc(db, "users", uid), {
       uid: uid,
@@ -30,7 +34,7 @@ export const addUserToFirestore = async (uid, name, email) => {
   }
 }
 
-export const getUserFromFirestore = async (uid) => {
+export const getUserFromFirestore = async (uid: string) => {
   const docRef = doc(db, "users", uid)
   const docSnap = await getDoc(docRef)
 

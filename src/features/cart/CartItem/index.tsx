@@ -3,6 +3,7 @@ import { useAppDispatch } from "app/store"
 import { removeFromCart } from "features/cart/cartSlice"
 import { FunctionComponent } from "react"
 import { Link } from "react-router-dom"
+import QuantityControl from "features/cart/CartItem/QuantityControl"
 
 interface ProductPrice {
   vinyl: string
@@ -20,7 +21,7 @@ interface Product {
   price: ProductPrice
 }
 
-interface CartItemProps {
+export interface CartItemProps {
   product: Product
 }
 
@@ -34,7 +35,7 @@ const CartItem: FunctionComponent<CartItemProps> = ({ product }) => {
       >
         <XIcon className="w-6 h-6 text-gray-400 hover:text-gray-500 cursor-pointer" />
       </div>
-      <div className="flex">
+      <div className="flex relative">
         <figure className="w-16 h-14 md:w-28 md:h-28">
           <img
             src={product.artwork}
@@ -52,10 +53,9 @@ const CartItem: FunctionComponent<CartItemProps> = ({ product }) => {
             </Link>
           </h2>
           <h3 className="text-lg text-gray-400">{product.artist}</h3>
-          <p className="text-lg">
-            {product.quantity} x £{product.price.vinyl}
-          </p>
+          <p className="text-lg">£{product.price.vinyl}</p>
         </div>
+        <QuantityControl product={product} />
       </div>
     </article>
   )

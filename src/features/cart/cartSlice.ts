@@ -98,13 +98,10 @@ export const cartSlice = createSlice({
       const product = state.cartItems.find((item) => item.docId === payload)
       product.quantity += 1
       state.cartQuantity += 1
+      state.cartTotal += Number(product.price.vinyl)
     },
     decreaseQuantity: (state, { payload }: PayloadAction<IdPayload>) => {
       const product = state.cartItems.find((item) => item.docId === payload)
-
-      if (state.cartQuantity > 0) {
-        state.cartQuantity -= 1
-      }
 
       if (product.quantity === 1) {
         state.cartItems = state.cartItems.filter(
@@ -113,6 +110,9 @@ export const cartSlice = createSlice({
       } else {
         product.quantity -= 1
       }
+
+      state.cartQuantity -= 1
+      state.cartTotal -= Number(product.price.vinyl)
     },
   },
 })

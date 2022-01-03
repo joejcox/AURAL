@@ -1,9 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+interface UserAddress {
+  first_line: string
+  second_line?: string
+  third_line?: string
+  country: string
+  postcode: string
+}
+
 interface User {
   email: string
   name: string
   uid: string
+  address?: UserAddress
 }
 
 interface UserAction {

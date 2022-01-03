@@ -16,7 +16,7 @@ import useProducts from "features/products/useProducts"
 import ShopVinyl from "views/public/Shop/ShopVinyl"
 import Error404 from "views/public/Error404"
 import Account from "views/private/Account"
-import AccountSettings from "views/private/Account/AccountSettings"
+import Settings from "views/private/Settings"
 import PrivateRoute from "components/PrivateRoute"
 import { FirebaseError } from "firebase/app"
 
@@ -82,7 +82,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/account" element={<PrivateRoute />}>
           <Route index element={<Account />} />
-          <Route path="/account/settings" element={<AccountSettings />} />
+          <Route path="/account/settings" element={<Settings />} />
         </Route>
       </Routes>
     </Layout>

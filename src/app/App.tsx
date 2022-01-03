@@ -18,6 +18,13 @@ import Error404 from "views/public/Error404"
 import Account from "views/private/Account"
 import AccountSettings from "views/private/Account/AccountSettings"
 import PrivateRoute from "components/PrivateRoute"
+import { FirebaseError } from "firebase/app"
+
+interface User {
+  name: string
+  email: string
+  uid: string
+}
 
 const App = () => {
   // if there's an error getting products, pull it from useProducts hook within products feature
@@ -29,12 +36,12 @@ const App = () => {
     const getUserData = async (uid: string) => {
       const response = await getUserFromFirestore(uid)
 
-      if (response.error) {
-        dispatch(setError(response.error.code))
+      if (response instanceof FirebaseError) {
+        dispatch(setError(response.code))
         return
       }
 
-      dispatch(setUser(response))
+      dispatch(setUser(response as User))
     }
 
     // firebase auth listener, when a user logs in this will trigger

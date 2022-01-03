@@ -10,6 +10,7 @@ import Field from "components/Form/Field"
 import FormButton from "components/Form/FormButton"
 import Label from "components/Form/Label"
 import { FunctionComponent, ReactNode } from "react"
+import { FirebaseError } from "firebase/app"
 
 type SignInFormProps = {
   children: ReactNode
@@ -42,8 +43,8 @@ const SignInForm: FunctionComponent<SignInFormProps> = ({ children }) => {
     const response = await signin(data)
 
     // error codes are handled in the userSlice within features/user
-    if (response.error) {
-      dispatch(setError(response.error.code))
+    if (response instanceof FirebaseError) {
+      dispatch(setError(response.code))
       resetField("password")
       return false
     }

@@ -29,7 +29,7 @@ export const productsSlice = createSlice({
       getProductsFromFirestore.fulfilled,
       (state, { payload }) => {
         if (payload.error) {
-          state.error = payload.code
+          state.error = payload.error.code
           return
         }
         state.products.push(...payload)

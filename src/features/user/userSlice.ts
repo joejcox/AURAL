@@ -1,9 +1,13 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit"
 
 interface User {
   email: string
   name: string
   uid: string
+}
+
+interface UserAction {
+  payload: User | undefined
 }
 interface InitialState {
   user: User | null
@@ -13,6 +17,7 @@ interface InitialState {
 
 type ErrorPayload = {
   payload: string
+  type: string
 }
 
 interface UserState {
@@ -29,7 +34,7 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser: (state, { payload }: PayloadAction<User>) => {
+    setUser: (state, { payload }: UserAction) => {
       state.user = payload
       state.authError = null
       state.loading = false

@@ -35,14 +35,16 @@ export const addUserToFirestore = async (
 }
 
 export const getUserFromFirestore = async (uid: string) => {
-  const docRef = doc(db, "users", uid)
-  const docSnap = await getDoc(docRef)
+  try {
+    const docRef = doc(db, "users", uid)
+    const docSnap = await getDoc(docRef)
 
-  if (docSnap.exists()) {
-    return docSnap.data()
+    if (docSnap.exists()) {
+      return docSnap.data()
+    }
+  } catch (error) {
+    return error
   }
-
-  throw new Error("User does not exist in Firestore")
 }
 
 export default auth

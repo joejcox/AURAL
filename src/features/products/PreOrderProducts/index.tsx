@@ -1,7 +1,12 @@
 import ProductsCarousel from "features/products/ProductsCarousel"
 import useProducts from "features/products/useProducts"
+import { HomepageProductCarouselProps } from "features/products/FeaturedProducts"
+import { FunctionComponent } from "react"
 
-const PreOrderProducts = ({ theme, bgImgClass = "" }) => {
+const PreOrderProducts: FunctionComponent<HomepageProductCarouselProps> = ({
+  theme,
+  bgImgClass,
+}) => {
   const { products, status } = useProducts()
   const today = new Date().getTime()
   const preOrderProducts = products.filter(
@@ -14,7 +19,7 @@ const PreOrderProducts = ({ theme, bgImgClass = "" }) => {
     <section
       className={`pt-20 pb-10 bg-no-repeat bg-cover relative z-0 ${bgImgClass}`}
     >
-      {bgImgClass !== "" && (
+      {bgImgClass && (
         <div className="absolute top-0 right-0 left-0 bottom-0 bg-black opacity-25 -z-1"></div>
       )}
       <h2

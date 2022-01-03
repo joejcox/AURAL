@@ -2,8 +2,9 @@ import SignInForm from "components/Form/AuthForms/SignInForm"
 import { Navigate, Link } from "react-router-dom"
 import useAuth from "features/user/useAuth"
 import { Helmet } from "react-helmet-async"
+import { FunctionComponent } from "react"
 
-const SignIn = () => {
+const SignIn: FunctionComponent = () => {
   const { user } = useAuth()
 
   return user ? (

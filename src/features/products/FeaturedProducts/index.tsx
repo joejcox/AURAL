@@ -1,7 +1,16 @@
 import ProductsCarousel from "features/products/ProductsCarousel"
 import useProducts from "features/products/useProducts"
+import { FunctionComponent } from "react"
 
-const FeaturedProducts = ({ theme, bgImgClass = "" }) => {
+export interface HomepageProductCarouselProps {
+  theme?: string
+  bgImgClass?: string
+}
+
+const FeaturedProducts: FunctionComponent<HomepageProductCarouselProps> = ({
+  theme,
+  bgImgClass,
+}) => {
   const { featured, status } = useProducts()
   const textColor = `${theme === "dark" ? "text-white" : "text-gray-800"}`
 
@@ -9,7 +18,7 @@ const FeaturedProducts = ({ theme, bgImgClass = "" }) => {
     <section
       className={`pt-20 pb-10 bg-no-repeat bg-cover relative z-0 ${bgImgClass}`}
     >
-      {bgImgClass !== "" && (
+      {bgImgClass && (
         <div className="absolute top-0 right-0 left-0 bottom-0 bg-black opacity-25 -z-1"></div>
       )}
       <h2

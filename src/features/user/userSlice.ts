@@ -1,13 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+interface User {
+  email: string
+  name: string
+  uid: string
+}
 interface InitialState {
-  user: object | null
+  user: User | null
   authError: string | null
   loading: boolean
 }
 
 type ErrorPayload = {
   payload: string
+}
+
+interface UserState {
+  user: InitialState
 }
 
 const initialState: InitialState = {
@@ -53,6 +62,6 @@ const userSlice = createSlice({
 
 export const { setUser, setError } = userSlice.actions
 
-export const selectUser = (state) => state.user
+export const selectUser = (state: UserState) => state.user
 
 export default userSlice.reducer

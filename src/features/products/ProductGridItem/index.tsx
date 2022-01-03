@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom"
+import { Product } from "features/products"
+import { FunctionComponent } from "react"
 
-const ProductGridItem = ({ product }) => {
+interface ProductGridProps {
+  product: Product
+}
+
+const ProductGridItem: FunctionComponent<ProductGridProps> = ({ product }) => {
   return (
     <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 mb-4">
       <div className="w-full md:w-52 md:h-52 relative cursor-pointer mx-auto">

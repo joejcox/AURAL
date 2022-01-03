@@ -3,8 +3,9 @@ import useAuth from "features/user/useAuth"
 import AccountSidebar from "components/AccountSidebar"
 import AccountContainer from "components/AccountContainer"
 import AccountContent from "components/AccountContent"
+import { FunctionComponent } from "react"
 
-const Account = () => {
+const Account: FunctionComponent = () => {
   const { user } = useAuth()
 
   if (!user) return null

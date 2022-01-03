@@ -26,7 +26,7 @@ const App = () => {
 
   useEffect(() => {
     // await user data from firestore then set global user state with the new information
-    const getUserData = async (uid: String) => {
+    const getUserData = async (uid: string) => {
       const response = await getUserFromFirestore(uid)
 
       if (response.error) {

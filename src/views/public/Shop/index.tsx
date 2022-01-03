@@ -1,8 +1,9 @@
 import Products from "features/products"
 import PageTitle from "core/PageTitle"
 import { Helmet } from "react-helmet-async"
+import { FunctionComponent } from "react"
 
-const Shop = () => {
+const Shop: FunctionComponent = () => {
   return (
     <section>
       <Helmet>

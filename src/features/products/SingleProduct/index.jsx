@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import { selectProducts } from "features/products/productsSlice"
 import Container from "core/Container"
 import ButtonLink from "core/ButtonLink"
@@ -8,10 +8,11 @@ import { formatDate } from "helpers/utils"
 import useCart from "features/cart/useCart"
 import { useContext } from "react"
 import { CartPreviewContext } from "context/CartPreviewContext"
+import { useAppDispatch } from "app/store"
 
 const SingleProduct = () => {
   const { showCartPreview } = useContext(CartPreviewContext)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const { addToCart } = useCart()
   const { productId } = useParams()
   const { products } = useSelector(selectProducts)

@@ -2,8 +2,6 @@
 
 ## A music related e-commerce website built with React JS and Redux
 
-As I now have 18 days of no work due to Christmas Holidays I have decided to build an e-commerce app
-
 ### [Live Demo](https://aural.joecoxdev.com)
 
 ## Expected Outcome:
@@ -14,6 +12,8 @@ A fully functional ecommerce application with user authentication, database (pro
 
 Using this project, I intend to learn how to use Redux and Testing libraries. I will also use the project to increase my knowledge with Firebase services.
 
+_edit, 03/01/2022_: I have decided to implement TypeScript, another skill set that I have been needing to learn for some time.
+
 I also hope to pick up more useful information on database structure. With my previous project [Block. Social Media](https://github.com/joejcox/Block) I came to a some issues with structure - this time I would like to try out a new structure to gain a more rounded experience.
 
 During the build of this project I intend to develop a habit of outlining a project, its core tools, components and design before I even begin to code. I feel like this will provide a more enjoyable experience.
@@ -23,6 +23,8 @@ During the build of this project I intend to develop a habit of outlining a proj
 Another aim is to focus on smaller commits, and providing shorter, but descriptive commit messages along with prefixes such as `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `style` and `test`.
 
 ## Tech used
+
+[TypeScript](https://www.typescriptlang.org/) - JavaScript Superset for strongly typed code
 
 [React](https://reactjs.org/) - JavaScript Library | Create React App (redux template)
 

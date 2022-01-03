@@ -2,7 +2,9 @@
 
 ## A music related e-commerce website built with React JS and Redux
 
-### [Live Demo](https://aural.joecoxdev.com)
+## Live Demo
+
+[https://aural.joecoxdev.com](https://aural.joecoxdev.com)
 
 ## Expected Outcome:
 

@@ -1,6 +1,6 @@
 # AURAL
 
-## A music related e-commerce website built with React JS and Redux
+## A music related e-commerce website built using TypeScript, React, Redux & Firebase (Auth/Firestore)
 
 ## Live Demo
 

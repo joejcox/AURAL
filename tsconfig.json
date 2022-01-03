@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "paths": {
+      "components": ["components/*"],
+      "core": ["core/*"],
+      "views": ["views/*"],
+      "helpers": ["helpers/*"],
+      "hooks": ["hooks/*"],
+      "portals": ["portals/*"],
+      "services": ["services/*"],
+      "features": ["features/*"],
+      "context": ["context/*"],
+      "assets": ["assets/*"],
+      "app": ["app/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

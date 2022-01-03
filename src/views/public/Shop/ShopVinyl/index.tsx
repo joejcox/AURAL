@@ -7,7 +7,6 @@ import PageTitle from "core/PageTitle"
 
 const ShopVinyl: FunctionComponent = () => {
   const { products } = useProducts()
-  console.log(products)
   const [vinylProducts, setVinylProducts] = useState(products)
 
   useEffect(() => {

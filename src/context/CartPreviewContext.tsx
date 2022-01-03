@@ -10,20 +10,20 @@ interface CartContext {
 
 export const CartPreviewContext = React.createContext<CartContext>(null)
 
+const initialClasses = "opacity-0 translate-y-4 pointer-events-none"
+
 const CartPreviewContextProvider: FunctionComponent = ({ children }) => {
   // tailwindcss classes for the CartPreview component, default should have no opacity or pointer events
-  const [classes, setClasses] = React.useState<ContextClasses>(
-    "opacity-0 pointer-events-none"
-  )
+  const [classes, setClasses] = React.useState<ContextClasses>(initialClasses)
 
   // when we want to show the cart we give it tailwind opacity and pointer event classes to allow animation
   const showCartPreview = () => {
-    setClasses("opacity-1 pointer-events-auto")
+    setClasses("opacity-1 pointer-events-auto translate-y-0")
   }
 
   // cart preview is dismissed by the user and set back to default tailwind classes
   const hideCartPreview = () => {
-    setClasses("opacity-0 pointer-events-none")
+    setClasses(initialClasses)
   }
 
   const value = {

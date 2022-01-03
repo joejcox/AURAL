@@ -27,7 +27,7 @@ const CartPreview: FunctionComponent = () => {
 
   return (
     <div
-      className={`pt-10 transition-opacity ease-in-out duration-200 motion-reduce:transition-none p-2 border border-gray-200 lg:border-gray-100 absolute top-[150%] right-[-1.5rem] lg:right-0 w-[100vw] lg:w-[400px] h-auto max-h-96 overflow-y-scroll z-[500] bg-white rounded shadow ${classes}`}
+      className={`pt-10 transition-all ease-in-out duration-200 motion-reduce:transition-none p-2 border border-gray-200 lg:border-gray-100 absolute top-[150%] right-[-1.5rem] lg:right-0 w-[100vw] lg:w-[400px] h-auto max-h-96 overflow-y-scroll z-[500] bg-white rounded shadow ${classes}`}
       ref={containerRef}
     >
       <div className="absolute top-2 right-2" onClick={hideCartPreview}>

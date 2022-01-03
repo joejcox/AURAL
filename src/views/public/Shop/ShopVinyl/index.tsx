@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
+import { FunctionComponent, useEffect, useState } from "react"
 import ProductGridItem from "features/products/ProductGridItem"
 import ProductGridContainer from "features/products/ProductGridItem/ProductGridContainer"
 import useProducts from "features/products/useProducts"
 import { Helmet } from "react-helmet-async"
 import PageTitle from "core/PageTitle"
 
-const ShopVinyl = () => {
+const ShopVinyl: FunctionComponent = () => {
   const { products } = useProducts()
   console.log(products)
   const [vinylProducts, setVinylProducts] = useState(products)

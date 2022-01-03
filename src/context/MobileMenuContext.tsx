@@ -1,4 +1,10 @@
-import { createContext, useState, useEffect, ReactNode } from "react"
+import {
+  createContext,
+  useState,
+  useEffect,
+  ReactNode,
+  FunctionComponent,
+} from "react"
 
 interface Props {
   children: ReactNode
@@ -11,8 +17,8 @@ interface MenuContext {
 
 export const MobileMenuContext = createContext<MenuContext>(null)
 
-const MobileMenuContextProvider = ({ children }: Props) => {
-  const [isOpen, setIsOpen] = useState(false)
+const MobileMenuContextProvider: FunctionComponent<Props> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   useEffect(() => {
     // when menu is open, hide the body overflow.

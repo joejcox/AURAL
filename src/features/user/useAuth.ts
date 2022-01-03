@@ -55,12 +55,7 @@ const useAuth = () => {
 
       if (authResponse.user) {
         const uid = authResponse.user.uid
-        const firestoreResponse = await addUserToFirestore(
-          uid,
-          data.name,
-          data.email
-        )
-        return { status: 200, data: firestoreResponse }
+        await addUserToFirestore(uid, data.name, data.email)
       }
 
       return authResponse.user

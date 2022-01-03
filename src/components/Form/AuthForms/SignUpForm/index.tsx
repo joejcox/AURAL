@@ -9,6 +9,7 @@ import Label from "components/Form/Label"
 import Field from "components/Form/Field"
 import { FunctionComponent, ReactNode } from "react"
 import { useAppDispatch } from "app/store"
+import { FirebaseError } from "firebase/app"
 
 interface FormData {
   name: string
@@ -39,12 +40,9 @@ const SignUpForm: FunctionComponent<ReactNode> = ({ children }) => {
     const response = await createAccount(data)
 
     // error codes are handled in the userSlice within features/user
-    if (response.error) {
-      dispatch(setError(response.error.code))
-      resetField("name")
+    if (response instanceof FirebaseError) {
+      dispatch(setError(response.code))
       resetField("email")
-      resetField("password")
-      resetField("passwordRepeat")
       return false
     }
 

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import { useAppDispatch } from "app/store"
 import { setError } from "features/user/userSlice"
 import useAuth from "features/user/useAuth"
-import { useNavigate } from "react-router-dom"
 import Field from "components/Form/Field"
 import FormButton from "components/Form/FormButton"
 import Label from "components/Form/Label"
@@ -23,7 +22,6 @@ interface FormData {
 }
 
 const SignInForm: FunctionComponent<SignInFormProps> = ({ children }) => {
-  const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const { authError, signin } = useAuth()
   const {
@@ -51,7 +49,6 @@ const SignInForm: FunctionComponent<SignInFormProps> = ({ children }) => {
 
     resetField("email")
     resetField("password")
-    navigate("/", { replace: true })
   }
 
   return (

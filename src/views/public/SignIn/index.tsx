@@ -8,7 +8,7 @@ const SignIn: FunctionComponent = () => {
   const { user } = useAuth()
 
   return user ? (
-    <Navigate to="/" />
+    <Navigate to="/account" />
   ) : (
     <SignInForm>
       <Helmet>

@@ -132,6 +132,12 @@ _Note:_ on create user, once everything is fulfilled I will navigate back to pre
 
 **Date:** 01/01/2022
 
+## Implement Typescript
+
+**Date:** 03/01/2022
+
+(partially complete)
+
 - Add wish list features once user accounts are in place (users will need to be stored in firebase to associate a wish list with their account)
 - Show a user drop down in the navbar which has links for account, settings, wishlist and sign out. Also add a wish list icon to the main nav next to search and basket.
 

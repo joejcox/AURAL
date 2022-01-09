@@ -45,14 +45,25 @@ const CheckoutForm: FunctionComponent<CheckoutFormProps> = ({
   }
 
   return (
-    <form className="w-[300px]" onSubmit={handleSubmit}>
-      <fieldset>
-        <CardElement className="bg-white p-4" options={cardStyle} />
-      </fieldset>
-      <button className="font-bold uppercase py-2 px-4 bg-black text-white mt-2 w-[300px]">
-        Pay Now
-      </button>
-    </form>
+    <>
+      <span className="text-gray-800 block text-xl">
+        Use test card 4000 0082 6000 0000
+      </span>
+      <span className="text-gray-500 block mb-6">
+        You can use any future date and numbers for cvc and postcode
+      </span>
+      <form className="w-[300px]" onSubmit={handleSubmit}>
+        <fieldset>
+          <CardElement
+            className="bg-white p-4 border border-gray-300 focus:border-main-400"
+            options={cardStyle}
+          />
+        </fieldset>
+        <button className="font-bold uppercase py-2 px-4 bg-black text-white mt-2 w-[300px]">
+          Pay Now
+        </button>
+      </form>
+    </>
   )
 }
 

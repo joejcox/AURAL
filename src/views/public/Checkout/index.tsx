@@ -31,7 +31,7 @@ const Checkout: FunctionComponent = () => {
 
     if (!error) {
       try {
-        const response = await axios.post("http://api.joecoxdev.com/payment", {
+        const response = await axios.post("https://api.joecoxdev.com/payment", {
           amount: 1000,
           paymentMethod: paymentMethod.id,
         })

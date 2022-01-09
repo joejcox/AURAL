@@ -53,7 +53,9 @@ const CartItem: FunctionComponent<CartItemProps> = ({ product }) => {
             </Link>
           </h2>
           <h3 className="text-lg text-gray-400">{product.artist}</h3>
-          <p className="text-lg">£{product.price.vinyl}</p>
+          <p className="text-lg">
+            £{(product.quantity * Number(product.price.vinyl)).toFixed(2)}
+          </p>
         </div>
         <QuantityControl product={product} />
       </div>

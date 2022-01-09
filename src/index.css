@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.payments-title {
+  @apply text-3xl text-gray-600 text-center lg:text-left;
+}
+
+.section-grey {
+  @apply bg-gray-100 py-16 mb-16;
+}
+
 /* swiper.js styles, used for carousels */
 
 .swiper-pagination-bullets {

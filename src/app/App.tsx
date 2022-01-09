@@ -19,6 +19,7 @@ import Account from "views/private/Account"
 import Settings from "views/private/Settings"
 import PrivateRoute from "components/PrivateRoute"
 import { FirebaseError } from "firebase/app"
+import Checkout from "views/public/Checkout"
 
 interface User {
   name: string
@@ -80,6 +81,7 @@ const App = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/account" element={<PrivateRoute />}>
           <Route index element={<Account />} />
           <Route path="/account/settings" element={<Settings />} />

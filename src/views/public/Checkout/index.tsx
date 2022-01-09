@@ -6,6 +6,8 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js"
 import axios from "axios"
 import CheckoutForm from "./CheckoutForm"
 import { Plane } from "react-loader-spinner"
+import useCart from "features/cart/useCart"
+import { useAppDispatch } from "app/store"
 
 export interface ServerResponse {
   message: string
@@ -14,6 +16,8 @@ export interface ServerResponse {
 }
 
 const Checkout: FunctionComponent = () => {
+  const dispatch = useAppDispatch()
+  const { emptyCart } = useCart()
   const [success, setSuccess] = useState(false)
   const [response, setResponse] = useState<ServerResponse | null>(null)
   const [loading, setLoading] = useState(false)
@@ -38,6 +42,7 @@ const Checkout: FunctionComponent = () => {
 
         if (response.data.success) {
           setResponse(response.data)
+          dispatch(emptyCart())
           setSuccess(true)
           setLoading(false)
         }

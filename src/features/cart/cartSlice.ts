@@ -40,6 +40,11 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    emptyCart: (state) => {
+      state.cartItems = []
+      state.cartTotal = 0.0
+      state.cartQuantity = 0
+    },
     // add item to cartItems - payload should be the full product object
     addToCart: (state, { payload }: PayloadAction<CartItem>) => {
       // spread payload in to a new object and add quantity key and value
@@ -117,8 +122,13 @@ export const cartSlice = createSlice({
   },
 })
 
-export const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } =
-  cartSlice.actions
+export const {
+  emptyCart,
+  addToCart,
+  removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+} = cartSlice.actions
 
 export const selectCart = (state: SelectCartState) => state.cart
 

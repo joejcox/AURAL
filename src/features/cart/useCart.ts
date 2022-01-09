@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import { selectCart } from "features/cart/cartSlice"
 import {
+  emptyCart,
   addToCart,
   removeFromCart,
   increaseQuantity,
@@ -13,6 +14,7 @@ const useCart = () => {
   const { cartItems, cartTotal, cartQuantity } = useSelector(selectCart)
 
   return {
+    emptyCart,
     cartItems,
     cartTotal,
     cartQuantity,

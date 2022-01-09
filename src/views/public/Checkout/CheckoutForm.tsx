@@ -36,9 +36,7 @@ const CheckoutForm: FunctionComponent<CheckoutFormProps> = ({
   if (success) {
     return (
       <>
-        <h2 className="text-xl text-gray-900">{response.message}</h2>
-        <span className="text-md font-bold">Order ID: {response.orderId}</span>
-        <h2 className="text-3xl text-gray-800">Thank you for your order</h2>
+        <h2 className="text-2xl text-gray-800">Thank you for your order</h2>
         <p>We will notify you when your items are dispatched.</p>
       </>
     )

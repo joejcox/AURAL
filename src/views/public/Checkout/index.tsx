@@ -77,10 +77,19 @@ const Checkout: FunctionComponent = () => {
       </Helmet>
       <Section>
         <Container>
-          <h1 className="payments-title">Checkout</h1>
+          {success ? (
+            <>
+              <h1 className="text-3xl text-main-400">{response.message}</h1>
+              <span className="text-md">
+                <b>Order ref:</b> {response.orderId}
+              </span>
+            </>
+          ) : (
+            <h1 className="payments-title">Checkout</h1>
+          )}
         </Container>
       </Section>
-      <section className="py-8 bg-gray-50 border-y border-y-gray-200">
+      <section className="py-10 bg-gray-50 border-y border-y-gray-200">
         <Container>
           <CheckoutForm
             handleSubmit={handleSubmit}

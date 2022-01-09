@@ -31,10 +31,13 @@ const Checkout: FunctionComponent = () => {
 
     if (!error) {
       try {
-        const response = await axios.post("https://api.joecoxdev.com/payment", {
-          amount: 1000,
-          paymentMethod: paymentMethod.id,
-        })
+        const response = await axios.post(
+          "https://api.joecoxdev.com/api/payment",
+          {
+            amount: 1000,
+            paymentMethod: paymentMethod.id,
+          }
+        )
 
         if (response.data.success) {
           setResponse(response.data)
